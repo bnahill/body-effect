@@ -72,7 +72,7 @@
 
 
 module dft_testbench();
-   reg clk, reset, next;
+   reg clk, next;
    wire next_out;
    integer i, j, k, l, m;
    reg [15:0] counter;
@@ -110,7 +110,7 @@ module dft_testbench();
 
    // Instantiate top-level module of DFT core 'X' signals are system inputs
    // and 'Y' signals are system outputs
-   dft_top dft_top_instance (.clk(clk), .reset(reset), .next(next), .next_out(next_out),
+   dft_top dft_top_instance (.clk(clk), .next(next), .next_out(next_out),
     .X0(X0), .Y0(Y0),
     .X1(X1), .Y1(Y1),
     .X2(X2), .Y2(Y2),
@@ -192,12 +192,9 @@ module dft_testbench();
       in[6] <= 0;
       in[7] <= 0;
       next <= 0;
-      reset <= 0;
 
       @(posedge clk);
-      reset <= 1;
       @(posedge clk);
-      reset <= 0;
       @(posedge clk);
       @(posedge clk);
       // Wait until next_out goes high, then wait one clock cycle and begin receiving data
@@ -252,429 +249,237 @@ module dft_testbench();
    end
 endmodule
 
-module dft_top(clk, reset, next, next_out,
-   X0, Y0,
-   X1, Y1,
-   X2, Y2,
-   X3, Y3,
-   X4, Y4,
-   X5, Y5,
-   X6, Y6,
-   X7, Y7);
+module dft_top(clk, next, next_out,
+	X0, Y0,
+	X1, Y1,
+	X2, Y2,
+	X3, Y3,
+	X4, Y4,
+	X5, Y5,
+	X6, Y6,
+	X7, Y7);
 
    output next_out;
-   input clk, reset, next;
+   input clk, next;
 
-   input [7:0] X0,
-      X1,
-      X2,
-      X3,
-      X4,
-      X5,
-      X6,
-      X7;
+   input [7:0] X0, X1, X2, X3, X4, X5, X6, X7;
 
-   output [7:0] Y0,
-      Y1,
-      Y2,
-      Y3,
-      Y4,
-      Y5,
-      Y6,
-      Y7;
+   output [7:0] Y0, Y1, Y2, Y3, Y4, Y5, Y6, Y7;
 
-   wire [7:0] t0_0;
-   wire [7:0] t0_1;
-   wire [7:0] t0_2;
-   wire [7:0] t0_3;
-   wire [7:0] t0_4;
-   wire [7:0] t0_5;
-   wire [7:0] t0_6;
-   wire [7:0] t0_7;
-   wire next_0;
-   wire [7:0] t1_0;
-   wire [7:0] t1_1;
-   wire [7:0] t1_2;
-   wire [7:0] t1_3;
-   wire [7:0] t1_4;
-   wire [7:0] t1_5;
-   wire [7:0] t1_6;
-   wire [7:0] t1_7;
-   wire next_1;
-   wire [7:0] t2_0;
-   wire [7:0] t2_1;
-   wire [7:0] t2_2;
-   wire [7:0] t2_3;
-   wire [7:0] t2_4;
-   wire [7:0] t2_5;
-   wire [7:0] t2_6;
-   wire [7:0] t2_7;
-   wire next_2;
-   assign t0_0 = X0;
-   assign Y0 = t2_0;
-   assign t0_1 = X1;
-   assign Y1 = t2_1;
-   assign t0_2 = X2;
-   assign Y2 = t2_2;
-   assign t0_3 = X3;
-   assign Y3 = t2_3;
-   assign t0_4 = X4;
-   assign Y4 = t2_4;
-   assign t0_5 = X5;
-   assign Y5 = t2_5;
-   assign t0_6 = X6;
-   assign Y6 = t2_6;
-   assign t0_7 = X7;
-   assign Y7 = t2_7;
-   assign next_0 = next;
-   assign next_out = next_2;
+	wire [7:0] t0_0;
+	wire [7:0] t0_1;
+	wire [7:0] t0_2;
+	wire [7:0] t0_3;
+	wire [7:0] t0_4;
+	wire [7:0] t0_5;
+	wire [7:0] t0_6;
+	wire [7:0] t0_7;
+	wire next_0;
+	wire [7:0] t1_0;
+	wire [7:0] t1_1;
+	wire [7:0] t1_2;
+	wire [7:0] t1_3;
+	wire [7:0] t1_4;
+	wire [7:0] t1_5;
+	wire [7:0] t1_6;
+	wire [7:0] t1_7;
+	wire next_1;
+	wire [7:0] t2_0;
+	wire [7:0] t2_1;
+	wire [7:0] t2_2;
+	wire [7:0] t2_3;
+	wire [7:0] t2_4;
+	wire [7:0] t2_5;
+	wire [7:0] t2_6;
+	wire [7:0] t2_7;
+	wire next_2;
+	assign t0_0 = X0;
+	assign Y0 = t2_0;
+	assign t0_1 = X1;
+	assign Y1 = t2_1;
+	assign t0_2 = X2;
+	assign Y2 = t2_2;
+	assign t0_3 = X3;
+	assign Y3 = t2_3;
+	assign t0_4 = X4;
+	assign Y4 = t2_4;
+	assign t0_5 = X5;
+	assign Y5 = t2_5;
+	assign t0_6 = X6;
+	assign Y6 = t2_6;
+	assign t0_7 = X7;
+	assign Y7 = t2_7;
+	assign next_0 = next;
+	assign next_out = next_2;
 
-   stage0 xstage0(.clk(clk), .reset(reset), .next_in(next_0), .next_out(next_1),
-       .X0_in(t0_0), .Y0(t1_0),
-       .X1_in(t0_1), .Y1(t1_1),
-       .X2_in(t0_2), .Y2(t1_2),
-       .X3_in(t0_3), .Y3(t1_3),
-       .X4_in(t0_4), .Y4(t1_4),
-       .X5_in(t0_5), .Y5(t1_5),
-       .X6_in(t0_6), .Y6(t1_6),
-       .X7_in(t0_7), .Y7(t1_7));
+	stage0 xstage0(.clk(clk), .next_in(next_0), .next_out(next_1),
+		.X0_in(t0_0), .Y0(t1_0),
+		.X1_in(t0_1), .Y1(t1_1),
+		.X2_in(t0_2), .Y2(t1_2),
+		.X3_in(t0_3), .Y3(t1_3),
+		.X4_in(t0_4), .Y4(t1_4),
+		.X5_in(t0_5), .Y5(t1_5),
+		.X6_in(t0_6), .Y6(t1_6),
+		.X7_in(t0_7), .Y7(t1_7));
 
 
-   stage1 xstage1(.clk(clk), .reset(reset), .next_in(next_1), .next_out(next_2),
-       .X0(t1_0), .Y0(t2_0),
-       .X1(t1_1), .Y1(t2_1),
-       .X2(t1_2), .Y2(t2_2),
-       .X3(t1_3), .Y3(t2_3),
-       .X4(t1_4), .Y4(t2_4),
-       .X5(t1_5), .Y5(t2_5),
-       .X6(t1_6), .Y6(t2_6),
-       .X7(t1_7), .Y7(t2_7));
-
-
+	stage1 xstage1(.clk(clk), .next_in(next_1), .next_out(next_2),
+		.X0(t1_0), .Y0(t2_0),
+		.X1(t1_1), .Y1(t2_1),
+		.X2(t1_2), .Y2(t2_2),
+		.X3(t1_3), .Y3(t2_3),
+		.X4(t1_4), .Y4(t2_4),
+		.X5(t1_5), .Y5(t2_5),
+		.X6(t1_6), .Y6(t2_6),
+		.X7(t1_7), .Y7(t2_7));
 endmodule
 
-module stage0(clk, reset, next_in, next_out,
-   X0_in, Y0,
-   X1_in, Y1,
-   X2_in, Y2,
-   X3_in, Y3,
-   X4_in, Y4,
-   X5_in, Y5,
-   X6_in, Y6,
-   X7_in, Y7);
+module stage0(clk, next_in, next_out,
+	X0_in, Y0,
+	X1_in, Y1,
+	X2_in, Y2,
+	X3_in, Y3,
+	X4_in, Y4,
+	X5_in, Y5,
+	X6_in, Y6,
+	X7_in, Y7);
 
-   output next_out;
-   input clk, reset, next_in;
+	output next_out;
+	input clk, next_in;
+	input [7:0] X0_in, X1_in, X2_in, X3_in, X4_in, X5_in, X6_in, X7_in;
 
-   reg next;
+	wire   [7:0] X0, X1, X2, X3, X4, X5, X6, X7;
 
-   input [7:0] X0_in,
-      X1_in,
-      X2_in,
-      X3_in,
-      X4_in,
-      X5_in,
-      X6_in,
-      X7_in;
+	output [7:0] Y0, Y1, Y2, Y3, Y4, Y5, Y6, Y7;
 
-   reg   [7:0] X0,
-      X1,
-      X2,
-      X3,
-      X4,
-      X5,
-      X6,
-      X7;
-
-   output [7:0] Y0,
-      Y1,
-      Y2,
-      Y3,
-      Y4,
-      Y5,
-      Y6,
-      Y7;
-
-	assign next_out = next;
-   //shiftRegFIFO #(1, 1) shiftFIFO_14591(.X(next), .Y(next_out), .clk(clk));
+	wire signed [7:0] Y0;
+	wire signed [7:0] Y1;
+	wire signed [7:0] Y2;
+	wire signed [7:0] Y3;
+	wire signed [7:0] Y4;
+	wire signed [7:0] Y5;
+	wire signed [7:0] Y6;
+	wire signed [7:0] Y7;
 
 
-   wire signed [7:0] a49;
-   wire signed [7:0] a50;
-   wire signed [7:0] t113;
-   wire signed [7:0] a51;
-   wire signed [7:0] a52;
-   wire signed [7:0] t114;
-   wire signed [7:0] t115;
-   wire signed [7:0] t116;
-   wire signed [7:0] Y0;
-   wire signed [7:0] Y1;
-   wire signed [7:0] Y2;
-   wire signed [7:0] Y3;
-   wire signed [7:0] a57;
-   wire signed [7:0] a58;
-   wire signed [7:0] t117;
-   wire signed [7:0] a59;
-   wire signed [7:0] a60;
-   wire signed [7:0] t118;
-   wire signed [7:0] t119;
-   wire signed [7:0] t120;
-   wire signed [7:0] Y4;
-   wire signed [7:0] Y5;
-   wire signed [7:0] Y6;
-   wire signed [7:0] Y7;
+	addfxp #(8, 1) add14299(.a(X0), .b(X4), .clk(clk), .q(Y0));
+	addfxp #(8, 1) add14314(.a(X1), .b(X5), .clk(clk), .q(Y1));
+	subfxp #(8, 1) sub14328(.a(X0), .b(X4), .clk(clk), .q(Y2));
+	subfxp #(8, 1) sub14342(.a(X1), .b(X5), .clk(clk), .q(Y3));
+	addfxp #(8, 1) add14373(.a(X2), .b(X6), .clk(clk), .q(Y4));
+	addfxp #(8, 1) add14388(.a(X3), .b(X7), .clk(clk), .q(Y5));
+	subfxp #(8, 1) sub14402(.a(X2), .b(X6), .clk(clk), .q(Y6));
+	subfxp #(8, 1) sub14416(.a(X3), .b(X7), .clk(clk), .q(Y7));
 
 
-   assign a49 = X0;
-   assign a50 = X4;
-   assign a51 = X1;
-   assign a52 = X5;
-   assign Y0 = t113;
-   assign Y1 = t114;
-   assign Y2 = t115;
-   assign Y3 = t116;
-   assign a57 = X2;
-   assign a58 = X6;
-   assign a59 = X3;
-   assign a60 = X7;
-   assign Y4 = t117;
-   assign Y5 = t118;
-   assign Y6 = t120;
-   assign Y7 = t119;
-
-    addfxp #(8, 1) add14299(.a(a49), .b(a50), .clk(clk), .q(t113));
-    addfxp #(8, 1) add14314(.a(a51), .b(a52), .clk(clk), .q(t114));
-    subfxp #(8, 1) sub14328(.a(a49), .b(a50), .clk(clk), .q(t115));
-    subfxp #(8, 1) sub14342(.a(a51), .b(a52), .clk(clk), .q(t116));
-    addfxp #(8, 1) add14373(.a(a57), .b(a58), .clk(clk), .q(t117));
-    addfxp #(8, 1) add14388(.a(a59), .b(a60), .clk(clk), .q(t118));
-    subfxp #(8, 1) sub14402(.a(a57), .b(a58), .clk(clk), .q(t119));
-    subfxp #(8, 1) sub14416(.a(a59), .b(a60), .clk(clk), .q(t120));
-   always @(posedge clk) begin
-      if (reset == 1) begin
-      end
-      else begin
-         X0 <= X0_in;
-         X1 <= X1_in;
-         X2 <= X2_in;
-         X3 <= X3_in;
-         X4 <= X4_in;
-         X5 <= X5_in;
-         X6 <= X6_in;
-         X7 <= X7_in;
-         next <= next_in;
-      end
-   end
-endmodule
-
-module shiftRegFIFO(X, Y, clk);
-   parameter depth=1, width=1;
-
-   output [width-1:0] Y;
-   input  [width-1:0] X;
-   input              clk;
-/*
-   reg [width-1:0]    mem [depth-1:0];
-   integer            index;
-
-   assign Y = mem[depth-1];
-
-   always @ (posedge clk) begin
-      for(index=1;index<depth;index=index+1) begin
-         mem[index] <= mem[index-1];
-      end
-      mem[0]<=X;
-   end
-*/
-	assign Y = X;
-endmodule
-
-module stage1(clk, reset, next_in, next_out,
-   X0, Y0,
-   X1, Y1,
-   X2, Y2,
-   X3, Y3,
-   X4, Y4,
-   X5, Y5,
-   X6, Y6,
-   X7, Y7);
-
-   output next_out;
-   input clk, reset, next_in;
-
-   reg next;
-
-   input [7:0] X0,
-      X1,
-      X2,
-      X3,
-      X4,
-      X5,
-      X6,
-      X7;
-
-   reg   [7:0] Y0_o,
-      Y1_o,
-      Y2_o,
-      Y3_o,
-      Y4_o,
-      Y5_o,
-      Y6_o,
-      Y7_o;
-
-   output [7:0] Y0,
-      Y1,
-      Y2,
-      Y3,
-      Y4,
-      Y5,
-      Y6,
-      Y7;
-
-   //shiftRegFIFO #(1, 1) shiftFIFO_14594(.X(next), .Y(next_out), .clk(clk));
-	assign next_out = next;
-
-   wire signed [7:0] a17;
-   wire signed [7:0] a18;
-   wire signed [7:0] t49;
-   wire signed [7:0] a19;
-   wire signed [7:0] a20;
-   wire signed [7:0] t50;
-   wire signed [7:0] t51;
-   wire signed [7:0] t52;
-   wire signed [7:0] Y0;
-   wire signed [7:0] Y1;
-   wire signed [7:0] Y4;
-   wire signed [7:0] Y5;
-   wire signed [7:0] a25;
-   wire signed [7:0] a26;
-   wire signed [7:0] t53;
-   wire signed [7:0] a27;
-   wire signed [7:0] a28;
-   wire signed [7:0] t54;
-   wire signed [7:0] t55;
-   wire signed [7:0] t56;
-   wire signed [7:0] Y2;
-   wire signed [7:0] Y3;
-   wire signed [7:0] Y6;
-   wire signed [7:0] Y7;
+	flop #8 reg_input0(.d(X0_in), .q(X0), .clk(clk));
+	flop #8 reg_input1(.d(X1_in), .q(X1), .clk(clk));
+	flop #8 reg_input2(.d(X2_in), .q(X2), .clk(clk));
+	flop #8 reg_input3(.d(X3_in), .q(X3), .clk(clk));
+	flop #8 reg_input4(.d(X4_in), .q(X4), .clk(clk));
+	flop #8 reg_input5(.d(X5_in), .q(X5), .clk(clk));
+	flop #8 reg_input6(.d(X6_in), .q(X6), .clk(clk));
+	flop #8 reg_input7(.d(X7_in), .q(X7), .clk(clk));
 
 
-   assign a17 = X0;
-   assign a18 = X4;
-   assign a19 = X1;
-   assign a20 = X5;
-   assign Y0 = Y0_o;
-   assign Y1 = Y1_o;
-   assign Y4 = Y4_o;
-   assign Y5 = Y5_o;
-   assign a25 = X2;
-   assign a26 = X6;
-   assign a27 = X3;
-   assign a28 = X7;
-   assign Y2 = Y2_o;
-   assign Y3 = Y3_o;
-   assign Y6 = Y6_o;
-   assign Y7 = Y7_o;
-
-    addfxp #(8, 1) add14450(.a(a17), .b(a18), .clk(clk), .q(t49));
-    addfxp #(8, 1) add14465(.a(a19), .b(a20), .clk(clk), .q(t50));
-    subfxp #(8, 1) sub14479(.a(a17), .b(a18), .clk(clk), .q(t51));
-    subfxp #(8, 1) sub14493(.a(a19), .b(a20), .clk(clk), .q(t52));
-    addfxp #(8, 1) add14524(.a(a25), .b(a26), .clk(clk), .q(t53));
-    //addfxp #(8, 1) add14539(.a(a27), .b(a28), .clk(clk), .q(t54));
-    subfxp #(8, 1) add14539(.a(a27), .b(a28), .clk(clk), .q(t54));
-    subfxp #(8, 1) sub14553(.a(a25), .b(a26), .clk(clk), .q(t55));
-    //subfxp #(8, 1) sub14567(.a(a27), .b(a28), .clk(clk), .q(t56));
-    addfxp #(8, 1) sub14567(.a(a27), .b(a28), .clk(clk), .q(t56));
-   always @(posedge clk) begin
-      if (reset == 1) begin
-      end
-      else begin
-         Y0_o <= t49;
-         Y1_o <= t50;
-         Y2_o <= t53;
-         Y3_o <= t54;
-         Y4_o <= t51;
-         Y5_o <= t52;
-         Y6_o <= t55;
-         Y7_o <= t56;
-         next <= next_in;
-      end
-   end
+	flop #1 next_delay(.d(next_in), .q(next_out), .clk(clk));
 endmodule
 
 
-						module multfix(clk, rst, a, b, q_sc, q_unsc);
-						   parameter WIDTH=35, CYCLES=6;
 
-						   input signed [WIDTH-1:0]    a,b;
-						   output [WIDTH-1:0]          q_sc;
-						   output [WIDTH-1:0]              q_unsc;
+module stage1(clk, next_in, next_out,
+	X0, Y0,
+	X1, Y1,
+	X2, Y2,
+	X3, Y3,
+	X4, Y4,
+	X5, Y5,
+	X6, Y6,
+	X7, Y7);
 
-						   input                       clk, rst;
-						   
-						   reg signed [2*WIDTH-1:0]    q[CYCLES-1:0];
-						   wire signed [2*WIDTH-1:0]   res;   
-						   integer                     i;
+	output next_out;
+	input clk, next_in;
 
-						   assign                      res = q[CYCLES-1];   
-						   
-						   assign                      q_unsc = res[WIDTH-1:0];
-						   assign                      q_sc = {res[2*WIDTH-1], res[2*WIDTH-4:WIDTH-2]};
-						      
-						   always @(posedge clk) begin
-						      q[0] <= a * b;
-						      for (i = 1; i < CYCLES; i=i+1) begin
-						         q[i] <= q[i-1];
-						      end
-						   end
-						                  
-						endmodule 
+	input  [7:0] X0, X1, X2, X3, X4, X5, X6, X7;
+	output [7:0] Y0, Y1, Y2, Y3, Y4, Y5, Y6, Y7;
+	
+	wire signed [7:0] Y0_reg, Y1_reg, Y2_reg, Y3_reg, Y4_reg, Y5_reg, Y6_reg, Y7_reg;
+
+	wire signed [7:0] t49;
+	wire signed [7:0] t50;
+	wire signed [7:0] t51;
+	wire signed [7:0] t52;
+	wire signed [7:0] Y0;
+	wire signed [7:0] Y1;
+	wire signed [7:0] Y4;
+	wire signed [7:0] Y5;
+	wire signed [7:0] t53;
+	wire signed [7:0] t54;
+	wire signed [7:0] t55;
+	wire signed [7:0] t56;
+	wire signed [7:0] Y2;
+	wire signed [7:0] Y3;
+	wire signed [7:0] Y6;
+	wire signed [7:0] Y7;
+
+
+	addfxp #(8, 1) add14450(.a(X0), .b(X4), .clk(clk), .q(Y0_reg));
+	addfxp #(8, 1) add14465(.a(X1), .b(X5), .clk(clk), .q(Y1_reg));
+	subfxp #(8, 1) sub14479(.a(X0), .b(X4), .clk(clk), .q(Y4_reg));
+	subfxp #(8, 1) sub14493(.a(X1), .b(X5), .clk(clk), .q(Y5_reg));
+	addfxp #(8, 1) add14524(.a(X2), .b(X6), .clk(clk), .q(Y2_reg));
+	//addfxp #(8, 1) add14539(.a(X3), .b(X7), .clk(clk), .q(Y3_reg));
+	subfxp #(8, 1) sub14539(.a(X3), .b(X7), .clk(clk), .q(Y3_reg));
+	subfxp #(8, 1) sub14553(.a(X2), .b(X6), .clk(clk), .q(Y6_reg));
+	//subfxp #(8, 1) sub14567(.a(X3), .b(X7), .clk(clk), .q(Y7_reg));
+	addfxp #(8, 1) add14567(.a(X3), .b(X7), .clk(clk), .q(Y7_reg));
+
+
+	flop #8 reg_output0(.d(Y0_reg), .q(Y0), .clk(clk));
+	flop #8 reg_output1(.d(Y1_reg), .q(Y1), .clk(clk));
+	flop #8 reg_output2(.d(Y2_reg), .q(Y2), .clk(clk));
+	flop #8 reg_output3(.d(Y3_reg), .q(Y3), .clk(clk));
+	flop #8 reg_output4(.d(Y4_reg), .q(Y4), .clk(clk));
+	flop #8 reg_output5(.d(Y5_reg), .q(Y5), .clk(clk));
+	flop #8 reg_output6(.d(Y6_reg), .q(Y6), .clk(clk));
+	flop #8 reg_output7(.d(Y7_reg), .q(Y7), .clk(clk));
+
+
+	flop #1 next_delay(.d(next_in), .q(next_out), .clk(clk));
+endmodule
+
+
+
+module flop(d, q, clk);
+	parameter width = 1;
+	input  [width-1:0] d;
+	input  clk;
+	output reg [width-1:0] q;
+	
+	always @(posedge clk) begin
+		q <= d;
+	end
+endmodule
+
+
+
 module addfxp(a, b, q, clk);
+	parameter width = 16, cycles=1;
 
-   parameter width = 16, cycles=1;
-   
-   input signed [width-1:0]  a, b;
-   input                     clk;   
-   output signed [width-1:0] q;
-   /*
-   reg signed [width-1:0]    res[cycles-1:0];
+	input signed [width-1:0]  a, b;
+	input                     clk;   
+	output signed [width-1:0] q;
 
-   assign                    q = res[cycles-1];
-   
-   integer                   i;   
-   
-   always @(posedge clk) begin
-     res[0] <= a+b;
-      for (i=1; i < cycles; i = i+1)
-        res[i] <= res[i-1];
-      
-   end
-   */
-   assign q = a + b;
+	assign q = a + b;
 endmodule
+
 
 module subfxp(a, b, q, clk);
+	parameter width = 16, cycles=1;
 
-   parameter width = 16, cycles=1;
-   
-   input signed [width-1:0]  a, b;
-   input                     clk;   
-   output signed [width-1:0] q;
-   /*
-   reg signed [width-1:0]    res[cycles-1:0];
+	input signed [width-1:0]  a, b;
+	input                     clk;   
+	output signed [width-1:0] q;
 
-   assign                    q = res[cycles-1];
-   
-   integer                   i;   
-   
-   always @(posedge clk) begin
-     res[0] <= a-b;
-      for (i=1; i < cycles; i = i+1)
-        res[i] <= res[i-1];
-      
-   end
-   */
-  assign q = a - b;
+	assign q = a - b;
 endmodule
