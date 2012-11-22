@@ -1,0 +1,347 @@
+*** SPICE deck for cell 8bit_LF{sch} from library LF-Adder_exp
+*** Created on Tue Nov 20, 2012 11:26:10
+*** Last revised on Wed Nov 21, 2012 17:45:02
+*** Written on Thu Nov 22, 2012 09:27:51 by Electric VLSI Design System, 
+*version 9.03
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+*** Lambda Conversion ***
+.opt scale=0.3U
+
+.include "..\mosistsmc180.sp"
+
+*** SUBCIRCUIT a2o1_1x FROM CELL a2o1_1x{sch}
+.SUBCKT a2o1_1x a b c y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_19 a 0 0 N L=2 W=6
+Mnmos_1 net_0 b net_19 0 N L=2 W=6
+Mnmos_2 net_0 c 0 0 N L=2 W=6
+Mnmos_3 y net_0 0 0 N L=2 W=7
+Mpmos_0 net_11 c net_0 vdd P L=2 W=9
+Mpmos_1 vdd b net_11 vdd P L=2 W=9
+Mpmos_2 vdd a net_11 vdd P L=2 W=9
+Mpmos_3 vdd net_0 y vdd P L=2 W=10
+.ENDS a2o1_1x
+
+*** SUBCIRCUIT and2_1x FROM CELL and2_1x{sch}
+.SUBCKT and2_1x a b y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_2 b net_1 0 N L=2 W=6
+Mnmos_1 net_1 a 0 0 N L=2 W=6
+Mnmos_2 y net_2 0 0 N L=2 W=7
+Mpmos_0 vdd b net_2 vdd P L=2 W=6
+Mpmos_1 vdd a net_2 vdd P L=2 W=6
+Mpmos_2 vdd net_2 y vdd P L=2 W=10
+.ENDS and2_1x
+
+*** SUBCIRCUIT BlackCell FROM CELL BlackCell{sch}
+.SUBCKT BlackCell G_i_j G_i_k G_k-1_j P_i_j P_i_k P_k-1_j
+** GLOBAL 0
+** GLOBAL vdd
+Xa2o1_1x_1 P_i_k G_k-1_j G_i_k G_i_j a2o1_1x
+Xand2_1x_0 P_i_k P_k-1_j P_i_j and2_1x
+.ENDS BlackCell
+
+*** SUBCIRCUIT a2o1_2x FROM CELL a2o1_2x{sch}
+.SUBCKT a2o1_2x a b c y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_19 a 0 0 N L=2 W=6
+Mnmos_1 net_0 b net_19 0 N L=2 W=6
+Mnmos_2 net_0 c 0 0 N L=2 W=6
+Mnmos_3 y net_0 0 0 N L=2 W=14
+Mpmos_0 net_11 c net_0 vdd P L=2 W=9
+Mpmos_1 vdd b net_11 vdd P L=2 W=9
+Mpmos_2 vdd a net_11 vdd P L=2 W=9
+Mpmos_3 vdd net_0 y vdd P L=2 W=20
+.ENDS a2o1_2x
+
+*** SUBCIRCUIT and2_2x FROM CELL and2_2x{sch}
+.SUBCKT and2_2x a b y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_2 b net_1 0 N L=2 W=6
+Mnmos_1 net_1 a 0 0 N L=2 W=6
+Mnmos_2 y net_2 0 0 N L=2 W=14
+Mpmos_0 vdd b net_2 vdd P L=2 W=6
+Mpmos_1 vdd a net_2 vdd P L=2 W=6
+Mpmos_2 vdd net_2 y vdd P L=2 W=20
+.ENDS and2_2x
+
+*** SUBCIRCUIT BlackCell_2x FROM CELL BlackCell_2x{sch}
+.SUBCKT BlackCell_2x G_i_j G_i_k G_k-1_j P_i_j P_i_k P_k-1_j
+** GLOBAL 0
+** GLOBAL vdd
+Xa2o1_2x_0 P_i_k G_k-1_j G_i_k G_i_j a2o1_2x
+Xand2_2x_0 P_i_k P_k-1_j P_i_j and2_2x
+.ENDS BlackCell_2x
+
+*** SUBCIRCUIT GreyCell FROM CELL GreyCell{sch}
+.SUBCKT GreyCell G_i_j G_i_k G_k-1_j P_i_k
+** GLOBAL 0
+** GLOBAL vdd
+Xa2o1_1x_0 P_i_k G_k-1_j G_i_k G_i_j a2o1_1x
+.ENDS GreyCell
+
+*** SUBCIRCUIT a2o1_4x FROM CELL a2o1_4x{sch}
+.SUBCKT a2o1_4x a b c y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_19 a 0 0 N L=2 W=12
+Mnmos_1 net_0 b net_19 0 N L=2 W=12
+Mnmos_2 net_0 c 0 0 N L=2 W=12
+Mnmos_3 y net_0 0 0 N L=2 W=27
+Mpmos_0 net_11 c net_0 vdd P L=2 W=18
+Mpmos_1 vdd b net_11 vdd P L=2 W=18
+Mpmos_2 vdd a net_11 vdd P L=2 W=18
+Mpmos_3 vdd net_0 y vdd P L=2 W=37
+.ENDS a2o1_4x
+
+*** SUBCIRCUIT GreyCell_4x FROM CELL GreyCell_4x{sch}
+.SUBCKT GreyCell_4x G_i_j G_i_k G_k-1_j P_i_k
+** GLOBAL 0
+** GLOBAL vdd
+Xa2o1_4x_0 P_i_k G_k-1_j G_i_k G_i_j a2o1_4x
+.ENDS GreyCell_4x
+
+*** SUBCIRCUIT GreyCell_2x FROM CELL GreyCell_2x{sch}
+.SUBCKT GreyCell_2x G_i_j G_i_k G_k-1_j P_i_k
+** GLOBAL 0
+** GLOBAL vdd
+Xa2o1_2x_0 P_i_k G_k-1_j G_i_k G_i_j a2o1_2x
+.ENDS GreyCell_2x
+
+*** SUBCIRCUIT buf_1x FROM CELL buf_1x{sch}
+.SUBCKT buf_1x a y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_23 a 0 0 N L=2 W=6
+Mnmos_1 y net_23 0 0 N L=2 W=7
+Mpmos_0 vdd a net_23 vdd P L=2 W=9
+Mpmos_1 vdd net_23 y vdd P L=2 W=10
+.ENDS buf_1x
+
+*** SUBCIRCUIT buf_2x FROM CELL buf_2x{sch}
+.SUBCKT buf_2x a y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_23 a 0 0 N L=2 W=6
+Mnmos_1 y net_23 0 0 N L=2 W=14
+Mpmos_0 vdd a net_23 vdd P L=2 W=9
+Mpmos_1 vdd net_23 y vdd P L=2 W=20
+.ENDS buf_2x
+
+*** SUBCIRCUIT buffer FROM CELL buffer{sch}
+.SUBCKT buffer G_i G_ib P_i P_ib
+** GLOBAL 0
+** GLOBAL vdd
+Xbuf_1x_0 P_i P_ib buf_1x
+Xbuf_1x_1 G_i G_ib buf_1x
+.ENDS buffer
+
+*** SUBCIRCUIT LF_logic FROM CELL LF_logic{sch}
+.SUBCKT LF_logic G0 G1 G2 G3 G4 G5 G6 G7 O0 O1 O2 O3 O4 O5 O6 O7 P1 P2 P3 P4 
++P5 P6 P7
+** GLOBAL 0
+** GLOBAL vdd
+XBlackCel_1 net_73 G5 G4 net_69 P5 P4 BlackCell
+XBlackCel_2 net_75 G7 G6 net_78 P7 P6 BlackCell
+XBlackCel_3 net_103 net_75 net_73 net_106 net_78 net_69 BlackCell
+XBlackCel_4 net_280 G3 G2 net_279 P3 P2 BlackCell_2x
+XGreyCell_2 net_312 net_103 net_99 net_106 GreyCell
+XGreyCell_5 O4 net_135 net_123 net_133 GreyCell
+XGreyCell_6 O2 net_146 O1 net_144 GreyCell
+XGreyCell_9 net_99 net_280 net_248 net_279 GreyCell_4x
+XGreyCell_10 net_248 G1 G0 P1 GreyCell_2x
+XGreyCell_13 O6 net_165 net_284 net_116 GreyCell_4x
+XGreyCell_15 net_284 net_94 net_99 net_343 GreyCell_2x
+Xbuf_1x_0 net_248 O1 buf_1x
+Xbuf_1x_4 G0 O0 buf_1x
+Xbuf_2x_1 net_284 O5 buf_2x
+Xbuf_2x_2 net_312 O7 buf_2x
+Xbuf_2x_3 net_99 net_123 buf_2x
+Xbuf_2x_4 net_123 O3 buf_2x
+Xbuffer_1 G2 net_146 P2 net_144 buffer
+Xbuffer_2 G4 net_135 P4 net_133 buffer
+Xbuffer_3 G6 net_165 P6 net_116 buffer
+Xbuffer_4 net_73 net_94 net_69 net_343 buffer
+.ENDS LF_logic
+
+*** SUBCIRCUIT Pbits_buffer FROM CELL Pbits_buffer{sch}
+.SUBCKT Pbits_buffer Pin1 Pin2 Pin3 Pin4 Pin5 Pin6 Pin7 Pout1 Pout2 Pout3 
++Pout4 Pout5 Pout6 Pout7
+** GLOBAL 0
+** GLOBAL vdd
+Xbuf_1x_0 Pin1 Pout1 buf_1x
+Xbuf_1x_1 Pin2 Pout2 buf_1x
+Xbuf_1x_2 Pin3 Pout3 buf_1x
+Xbuf_1x_3 Pin4 Pout4 buf_1x
+Xbuf_1x_4 Pin5 Pout5 buf_1x
+Xbuf_1x_5 Pin6 Pout6 buf_1x
+Xbuf_1x_6 Pin7 Pout7 buf_1x
+.ENDS Pbits_buffer
+
+*** SUBCIRCUIT inv_1x FROM CELL inv_1x{sch}
+.SUBCKT inv_1x a y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 y a 0 0 N L=2 W=7
+Mpmos_0 vdd a y vdd P L=2 W=10
+.ENDS inv_1x
+
+*** SUBCIRCUIT nand2_1x FROM CELL nand2_1x{sch}
+.SUBCKT nand2_1x a b y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 y b net_5 0 N L=2 W=12
+Mnmos_1 net_5 a 0 0 N L=2 W=12
+Mpmos_0 vdd b y vdd P L=2 W=12
+Mpmos_1 vdd a y vdd P L=2 W=12
+.ENDS nand2_1x
+
+*** SUBCIRCUIT o2a1_4x FROM CELL o2a1_4x{sch}
+.SUBCKT o2a1_4x a b c y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_7 a 0 0 N L=2 W=12
+Mnmos_1 net_7 b 0 0 N L=2 W=12
+Mnmos_2 net_12 c net_7 0 N L=2 W=12
+Mnmos_3 y net_12 0 0 N L=2 W=27
+Mpmos_0 net_35 b net_12 vdd P L=2 W=18
+Mpmos_1 vdd a net_35 vdd P L=2 W=18
+Mpmos_3 vdd c net_12 vdd P L=2 W=18
+Mpmos_4 vdd net_12 y vdd P L=2 W=37
+.ENDS o2a1_4x
+
+*** SUBCIRCUIT bitwisePG FROM CELL bitwisePG{sch}
+.SUBCKT bitwisePG A B G P
+** GLOBAL 0
+** GLOBAL vdd
+Xinv_1x_0 net_2 G inv_1x
+Xnand2_1x_0 A B net_2 nand2_1x
+Xo2a1_4x_0 A B net_2 P o2a1_4x
+.ENDS bitwisePG
+
+*** SUBCIRCUIT bitwisePG_2x FROM CELL bitwisePG_2x{sch}
+.SUBCKT bitwisePG_2x A B G P
+** GLOBAL 0
+** GLOBAL vdd
+Xinv_1x_0 net_2 G inv_1x
+Xnand2_1x_0 A B net_2 nand2_1x
+Xo2a1_4x_0 A B net_2 P o2a1_4x
+.ENDS bitwisePG_2x
+
+*** SUBCIRCUIT xor2_1x FROM CELL xor2_1x{sch}
+.SUBCKT xor2_1x a b y
+** GLOBAL 0
+** GLOBAL vdd
+Mnmos_0 net_3 a 0 0 N L=2 W=14
+Mnmos_1 net_4 ab 0 0 N L=2 W=14
+Mnmos_2 y b net_3 0 N L=2 W=14
+Mnmos_3 y bb net_4 0 N L=2 W=14
+Mnmos_4 bb b 0 0 N L=2 W=6
+Mnmos_5 ab a 0 0 N L=2 W=6
+Mpmos_0 net_7 b y vdd P L=2 W=20
+Mpmos_1 vdd ab net_7 vdd P L=2 W=20
+Mpmos_2 net_8 bb y vdd P L=2 W=20
+Mpmos_3 vdd a net_8 vdd P L=2 W=20
+Mpmos_4 vdd b bb vdd P L=2 W=9
+Mpmos_5 vdd a ab vdd P L=2 W=9
+.ENDS xor2_1x
+
+*** SUBCIRCUIT sumLogic FROM CELL sumLogic{sch}
+.SUBCKT sumLogic Cout G8 O0 O1 O2 O3 O4 O5 O6 O7 P1 P2 P3 P4 P5 P6 P7 P8 S1 
++S2 S3 S4 S5 S6 S7 S8
+** GLOBAL 0
+** GLOBAL vdd
+Xa2o1_1x_0 O7 P8 G8 Cout a2o1_1x
+Xxor2_1x_0 O0 P1 S1 xor2_1x
+Xxor2_1x_24 O1 P2 S2 xor2_1x
+Xxor2_1x_25 O2 P3 S3 xor2_1x
+Xxor2_1x_26 O3 P4 S4 xor2_1x
+Xxor2_1x_27 O4 P5 S5 xor2_1x
+Xxor2_1x_28 O5 P6 S6 xor2_1x
+Xxor2_1x_29 O6 P7 S7 xor2_1x
+Xxor2_1x_30 O7 P8 S8 xor2_1x
+.ENDS sumLogic
+
+.global 0 vdd
+
+*** SUBCIRCUIT 8bit_LF FROM CELL 8bit_LF{sch}
+.SUBCKT 8bit_LF A1 A2 A3 A4 A5 A6 A7 A8 B1 B2 B3 B4 B5 B6 B7 B8 Cin Cout S1 
++S2 S3 S4 S5 S6 S7 S8
+** GLOBAL 0
+** GLOBAL vdd
+XLF_logic_3 Cin net_164 net_170 net_175 net_181 net_187 net_193 net_199 
++net_287 net_286 net_285 net_284 net_283 net_282 net_281 net_256 net_166 
++net_345 net_178 net_184 net_190 net_196 net_202 LF_logic
+XPbits_bu_0 net_166 net_345 net_178 net_184 net_190 net_196 net_202 net_294 
++net_295 net_298 net_301 net_307 net_313 net_319 Pbits_buffer
+XbitwiseP_1 A3 B3 net_175 net_178 bitwisePG
+XbitwiseP_2 A1 B1 net_164 net_166 bitwisePG
+XbitwiseP_4 A6 B6 net_193 net_196 bitwisePG
+XbitwiseP_5 A7 B7 net_199 net_202 bitwisePG
+XbitwiseP_6 A5 B5 net_187 net_190 bitwisePG
+XbitwiseP_7 A4 B4 net_181 net_184 bitwisePG
+XbitwiseP_8 A8 B8 net_329 net_325 bitwisePG
+XbitwiseP_9 A2 B2 net_170 net_345 bitwisePG_2x
+XsumLogic_1 Cout net_329 net_287 net_286 net_285 net_284 net_283 net_282 
++net_281 net_256 net_294 net_295 net_298 net_301 net_307 net_313 net_319 
++net_325 S1 S2 S3 S4 S5 S6 S7 S8 sumLogic
+.ENDS 8bit_LF
+
+X8bit_LF A1 A2 A3 A4 A5 A6 A7 A8 B1 B2 B3 B4 B5 B6 B7 B8 Cin Cout S1 S2 S3 S4 
++S5 S6 S7 S8 8bit_LF
+
+VDD vdd 0 1.8V
+
+*VDD vdd 0 10V
+
+** DC inputs
+
+VA1 A1 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA2 A2 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA3 A3 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA4 A4 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA5 A5 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA6 A6 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA7 A7 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+VA8 A8 0 PULSE(0V 1.8V 50PS 0PS 0PS 10S 11S)
+
+*VA1 A1 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA2 A2 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA3 A3 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA4 A4 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA5 A5 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA6 A6 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA7 A7 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+*VA8 A8 0 PULSE(0V 10V 50PS 0PS 0PS 10S 11S)
+
+VB1 B1 0 PULSE(0V 1.8V 50p 0p 0p 10 11)
+VB2 B2 0 0V
+VB3 B3 0 0V
+VB4 B4 0 0V
+VB5 B5 0 0V
+VB6 B6 0 0V
+VB7 B7 0 0V
+VB8 B8 0 0V
+
+VCin Cin 0 0V
+
+.SAVE all
+
+.TRAN 50PS 10NS
+
+.PRINT TRAN V(Cout)
+.PRINT TRAN V(S8)
+.PRINT TRAN V(S7)
+.PRINT TRAN V(S6)
+.PRINT TRAN V(S5)
+.PRINT TRAN V(S4)
+.PRINT TRAN V(S3)
+.PRINT TRAN V(S2)
+.PRINT TRAN V(S1)
+
+.END
