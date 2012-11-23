@@ -12,9 +12,9 @@ VVHDL|vhdl
 Tbicmos|ScaleFORbicmos()D300.0
 Tmocmos|MoCMOSAlternateActivePolyRules()BT|ScaleFORmocmos()D300.0|mocmosNumberOfMetalLayers()I3|mocmosSecondPolysilicon()BF
 
-# Cell 8bit_LF;1{lay}
-C8bit_LF;1{lay}||mocmos|1353599561634|1353612798338||ATTR_NCC(D5G1;NT)S["exportsConnectedByParent vdd /vdd_[0-9]+/","exportsConnectedByParent gnd /gnd_[0-9]+/"]|DRC_last_good_drc_area_date()G1353612916457|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353612916457
-ILF_logic;1{lay}|LF_logic@0||88|-110|||D5G4;
+# Cell 8bit_LF_OPTIMIZED;1{lay}
+C8bit_LF_OPTIMIZED;1{lay}||mocmos|1353599561634|1353612798338||ATTR_NCC(D5G1;NT)S["exportsConnectedByParent vdd /vdd_[0-9]+/","exportsConnectedByParent gnd /gnd_[0-9]+/"]|DRC_last_good_drc_area_date()G1353612916457|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353612916457
+ILF_logic_OPTIMZIED;1{lay}|LF_logic@0||88|-110|||D5G4;
 IPbits_buffer;1{lay}|Pbits_bu@0||296|0|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
 IbitwisePG_block;1{lay}|bitwiseP@0||0|0|||D5G4;
@@ -355,23 +355,23 @@ Evdd_7||D5G2;|bitwiseP@0|vdd_7|P
 Evdd_8||D5G2;|LF_logic@0|vdd|P
 X
 
-# Cell 8bit_LF;1{net.als}
-C8bit_LF;1{net.als}||artwork|1353443239329|1353443239330||FACET_message()S[#*************************************************,#  ALS Netlist file,#,"#  File Creation:    Tue Nov 20, 2012 15:27:19",#-------------------------------------------------,"","model a2o1_1x(a, b, c, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_19)","nmos_1: nMOStran(b, net_19, net_0)","nmos_2: nMOStran(c, gnd, net_0)","nmos_3: nMOStran(net_0, gnd, y)","pmos_0: PMOStran(c, net_0, net_11)","pmos_1: PMOStran(b, net_11, vdd)","pmos_2: PMOStran(a, net_11, vdd)","pmos_3: PMOStran(net_0, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model and2_1x(a, b, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(b, net_1, net_2)","nmos_1: nMOStran(a, gnd, net_1)","nmos_2: nMOStran(net_2, gnd, y)","pmos_0: PMOStran(b, net_2, vdd)","pmos_1: PMOStran(a, net_2, vdd)","pmos_2: PMOStran(net_2, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model BlackCell(G_i_k, G_k_1_j, P_i_k, P_k_1_j, G_i_j, P_i_j)","a2o1_1x_0: a2o1_1x(P_i_k, G_k_1_j, G_i_k, G_i_j)","and2_1x_0: and2_1x(P_i_k, P_k_1_j, P_i_j)","","model GreyCell(G_i_k, G_k_1_j, P_i_k, G_i_j)","a2o1_1x_0: a2o1_1x(P_i_k, G_k_1_j, G_i_k, G_i_j)","","model buf_1x(a, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_23)","nmos_1: nMOStran(net_23, gnd, y)","pmos_0: PMOStran(a, net_23, vdd)","pmos_1: PMOStran(net_23, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model buffer(G_i, P_i, G_ib, P_ib)","buf_1x_0: buf_1x(P_i, P_ib)","buf_1x_1: buf_1x(G_i, G_ib)","","model LF_logic(G0, G1, G2, G3, G4, G5, G6, G7, P1, P2, P3, P4, P5, P6, P7, O0, O1, O2, O3, O4, O5, O6, O7)","BlackCel_0: BlackCell(G3, G2, P3, P2, net_159, net_160)","BlackCel_1: BlackCell(G5, G4, P5, P4, net_73, net_69)","BlackCel_2: BlackCell(G7, G6, P7, P6, net_75, net_78)","BlackCel_3: BlackCell(net_75, net_73, net_78, net_69, net_103, net_106)","GreyCell_0: GreyCell(G1, G0, P1, net_83)","GreyCell_1: GreyCell(net_159, net_83, net_160, net_97)","GreyCell_2: GreyCell(net_103, net_97, net_106, O7)","GreyCell_3: GreyCell(net_94, net_97, net_93, net_112)","GreyCell_4: GreyCell(net_118, O5, net_116, O6)","GreyCell_5: GreyCell(net_135, O3, net_133, O4)","GreyCell_6: GreyCell(net_146, O1, net_144, O2)","buf_1x_0: buf_1x(net_83, O1)","buf_1x_1: buf_1x(net_97, O3)","buf_1x_3: buf_1x(net_112, O5)","buf_1x_4: buf_1x(G0, O0)","buffer_1: buffer(G2, P2, net_146, net_144)","buffer_2: buffer(G4, P4, net_135, net_133)","buffer_3: buffer(G6, P6, net_118, net_116)","buffer_4: buffer(net_73, net_69, net_94, net_93)","","model inv_1x(a, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, y)","pmos_0: PMOStran(a, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model nand2_1x(a, b, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(b, net_5, y)","nmos_1: nMOStran(a, gnd, net_5)","pmos_0: PMOStran(b, y, vdd)","pmos_1: PMOStran(a, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model o2a1_1x(a, b, c, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_7)","nmos_1: nMOStran(b, gnd, net_7)","nmos_2: nMOStran(c, net_7, net_12)","nmos_3: nMOStran(net_12, gnd, y)","pmos_0: PMOStran(b, net_12, net_35)","pmos_1: PMOStran(a, net_35, vdd)","pmos_3: PMOStran(c, net_12, vdd)","pmos_4: PMOStran(net_12, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model bitwisePG(A, B, G, P)","inv_1x_0: inv_1x(net_1, G)","nand2_1x_0: nand2_1x(A, B, net_1)","o2a1_1x_0: o2a1_1x(A, B, net_1, P)","","model xor2_1x(a, b, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_3)","nmos_1: nMOStran(ab, gnd, net_4)","nmos_2: nMOStran(b, net_3, y)","nmos_3: nMOStran(bb, net_4, y)","nmos_4: nMOStran(b, gnd, bb)","nmos_5: nMOStran(a, gnd, ab)","pmos_0: PMOStran(b, y, net_7)","pmos_1: PMOStran(ab, net_7, vdd)","pmos_2: PMOStran(bb, y, net_8)","pmos_3: PMOStran(a, net_8, vdd)","pmos_4: PMOStran(b, bb, vdd)","pmos_5: PMOStran(a, ab, vdd)",pwr_0: power(vdd),set power = H@3,"","model sumLogic(G8, O0, O1, O2, O3, O4, O5, O6, O7, P1, P2, P3, P4, P5, P6, P7, P8, Cout, S1, S2, S3, S4, S5, S6, S7, S8)","a2o1_1x_0: a2o1_1x(O7, P8, G8, Cout)","xor2_1x_0: xor2_1x(O0, P1, S1)","xor2_1x_24: xor2_1x(O1, P2, S2)","xor2_1x_25: xor2_1x(O2, P3, S3)","xor2_1x_26: xor2_1x(O3, P4, S4)","xor2_1x_27: xor2_1x(O4, P5, S5)","xor2_1x_28: xor2_1x(O5, P6, S6)","xor2_1x_29: xor2_1x(O6, P7, S7)","xor2_1x_30: xor2_1x(O7, P8, S8)","","model 8bit_LF(A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, Cin, Cout, S1, S2, S3, S4, S5, S6, S7, S8)","LF_logic_3: LF_logic(Cin, net_164, net_169, net_175, net_181, net_187, net_193, net_199, net_166, net_174, net_178, net_184, net_190, net_196, net_202, net_287, net_286, net_285, net_284, net_283, net_282, net_281, net_256)","bitwiseP_0: bitwisePG(A2, B2, net_169, net_174)","bitwiseP_1: bitwisePG(A3, B3, net_175, net_178)","bitwiseP_2: bitwisePG(A1, B1, net_164, net_166)","bitwiseP_4: bitwisePG(A6, B6, net_193, net_196)","bitwiseP_5: bitwisePG(A7, B7, net_199, net_202)","bitwiseP_6: bitwisePG(A5, B5, net_187, net_190)","bitwiseP_7: bitwisePG(A4, B4, net_181, net_184)","bitwiseP_8: bitwisePG(A8, B8, net_329, net_325)","sumLogic_1: sumLogic(net_329, net_287, net_286, net_285, net_284, net_283, net_282, net_281, net_256, net_166, net_174, net_178, net_184, net_190, net_196, net_202, net_325, Cout, S1, S2, S3, S4, S5, S6, S7, S8)","",#********* End of netlist *******************,"",# Built-in model for power,gate power(p),set p=H@3,t: delta=0,"",# Built-in model for PMOStran,"function PMOStran(g, a1, a2)","i: g, a1, a2","o: a1, a2",t: delta=1e-8,"",# Built-in model for nMOStran,"function nMOStran(g, a1, a2)","i: g, a1, a2","o: a1, a2",t: delta=1e-8,"",# Built-in model for ground,gate ground(g),set g=L@3,t: delta=0]
+# Cell 8bit_LF_OPTIMIZED;1{net.als}
+C8bit_LF_OPTIMIZED;1{net.als}||artwork|1353443239329|1353443239330||FACET_message()S[#*************************************************,#  ALS Netlist file,#,"#  File Creation:    Tue Nov 20, 2012 15:27:19",#-------------------------------------------------,"","model a2o1_1x(a, b, c, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_19)","nmos_1: nMOStran(b, net_19, net_0)","nmos_2: nMOStran(c, gnd, net_0)","nmos_3: nMOStran(net_0, gnd, y)","pmos_0: PMOStran(c, net_0, net_11)","pmos_1: PMOStran(b, net_11, vdd)","pmos_2: PMOStran(a, net_11, vdd)","pmos_3: PMOStran(net_0, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model and2_1x(a, b, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(b, net_1, net_2)","nmos_1: nMOStran(a, gnd, net_1)","nmos_2: nMOStran(net_2, gnd, y)","pmos_0: PMOStran(b, net_2, vdd)","pmos_1: PMOStran(a, net_2, vdd)","pmos_2: PMOStran(net_2, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model BlackCell(G_i_k, G_k_1_j, P_i_k, P_k_1_j, G_i_j, P_i_j)","a2o1_1x_0: a2o1_1x(P_i_k, G_k_1_j, G_i_k, G_i_j)","and2_1x_0: and2_1x(P_i_k, P_k_1_j, P_i_j)","","model GreyCell(G_i_k, G_k_1_j, P_i_k, G_i_j)","a2o1_1x_0: a2o1_1x(P_i_k, G_k_1_j, G_i_k, G_i_j)","","model buf_1x(a, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_23)","nmos_1: nMOStran(net_23, gnd, y)","pmos_0: PMOStran(a, net_23, vdd)","pmos_1: PMOStran(net_23, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model buffer(G_i, P_i, G_ib, P_ib)","buf_1x_0: buf_1x(P_i, P_ib)","buf_1x_1: buf_1x(G_i, G_ib)","","model LF_logic(G0, G1, G2, G3, G4, G5, G6, G7, P1, P2, P3, P4, P5, P6, P7, O0, O1, O2, O3, O4, O5, O6, O7)","BlackCel_0: BlackCell(G3, G2, P3, P2, net_159, net_160)","BlackCel_1: BlackCell(G5, G4, P5, P4, net_73, net_69)","BlackCel_2: BlackCell(G7, G6, P7, P6, net_75, net_78)","BlackCel_3: BlackCell(net_75, net_73, net_78, net_69, net_103, net_106)","GreyCell_0: GreyCell(G1, G0, P1, net_83)","GreyCell_1: GreyCell(net_159, net_83, net_160, net_97)","GreyCell_2: GreyCell(net_103, net_97, net_106, O7)","GreyCell_3: GreyCell(net_94, net_97, net_93, net_112)","GreyCell_4: GreyCell(net_118, O5, net_116, O6)","GreyCell_5: GreyCell(net_135, O3, net_133, O4)","GreyCell_6: GreyCell(net_146, O1, net_144, O2)","buf_1x_0: buf_1x(net_83, O1)","buf_1x_1: buf_1x(net_97, O3)","buf_1x_3: buf_1x(net_112, O5)","buf_1x_4: buf_1x(G0, O0)","buffer_1: buffer(G2, P2, net_146, net_144)","buffer_2: buffer(G4, P4, net_135, net_133)","buffer_3: buffer(G6, P6, net_118, net_116)","buffer_4: buffer(net_73, net_69, net_94, net_93)","","model inv_1x(a, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, y)","pmos_0: PMOStran(a, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model nand2_1x(a, b, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(b, net_5, y)","nmos_1: nMOStran(a, gnd, net_5)","pmos_0: PMOStran(b, y, vdd)","pmos_1: PMOStran(a, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model o2a1_1x(a, b, c, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_7)","nmos_1: nMOStran(b, gnd, net_7)","nmos_2: nMOStran(c, net_7, net_12)","nmos_3: nMOStran(net_12, gnd, y)","pmos_0: PMOStran(b, net_12, net_35)","pmos_1: PMOStran(a, net_35, vdd)","pmos_3: PMOStran(c, net_12, vdd)","pmos_4: PMOStran(net_12, y, vdd)",pwr_0: power(vdd),set power = H@3,"","model bitwisePG(A, B, G, P)","inv_1x_0: inv_1x(net_1, G)","nand2_1x_0: nand2_1x(A, B, net_1)","o2a1_1x_0: o2a1_1x(A, B, net_1, P)","","model xor2_1x(a, b, y)",gnd_0: ground(gnd),"nmos_0: nMOStran(a, gnd, net_3)","nmos_1: nMOStran(ab, gnd, net_4)","nmos_2: nMOStran(b, net_3, y)","nmos_3: nMOStran(bb, net_4, y)","nmos_4: nMOStran(b, gnd, bb)","nmos_5: nMOStran(a, gnd, ab)","pmos_0: PMOStran(b, y, net_7)","pmos_1: PMOStran(ab, net_7, vdd)","pmos_2: PMOStran(bb, y, net_8)","pmos_3: PMOStran(a, net_8, vdd)","pmos_4: PMOStran(b, bb, vdd)","pmos_5: PMOStran(a, ab, vdd)",pwr_0: power(vdd),set power = H@3,"","model sumLogic(G8, O0, O1, O2, O3, O4, O5, O6, O7, P1, P2, P3, P4, P5, P6, P7, P8, Cout, S1, S2, S3, S4, S5, S6, S7, S8)","a2o1_1x_0: a2o1_1x(O7, P8, G8, Cout)","xor2_1x_0: xor2_1x(O0, P1, S1)","xor2_1x_24: xor2_1x(O1, P2, S2)","xor2_1x_25: xor2_1x(O2, P3, S3)","xor2_1x_26: xor2_1x(O3, P4, S4)","xor2_1x_27: xor2_1x(O4, P5, S5)","xor2_1x_28: xor2_1x(O5, P6, S6)","xor2_1x_29: xor2_1x(O6, P7, S7)","xor2_1x_30: xor2_1x(O7, P8, S8)","","model 8bit_LF(A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, B6, B7, B8, Cin, Cout, S1, S2, S3, S4, S5, S6, S7, S8)","LF_logic_3: LF_logic(Cin, net_164, net_169, net_175, net_181, net_187, net_193, net_199, net_166, net_174, net_178, net_184, net_190, net_196, net_202, net_287, net_286, net_285, net_284, net_283, net_282, net_281, net_256)","bitwiseP_0: bitwisePG(A2, B2, net_169, net_174)","bitwiseP_1: bitwisePG(A3, B3, net_175, net_178)","bitwiseP_2: bitwisePG(A1, B1, net_164, net_166)","bitwiseP_4: bitwisePG(A6, B6, net_193, net_196)","bitwiseP_5: bitwisePG(A7, B7, net_199, net_202)","bitwiseP_6: bitwisePG(A5, B5, net_187, net_190)","bitwiseP_7: bitwisePG(A4, B4, net_181, net_184)","bitwiseP_8: bitwisePG(A8, B8, net_329, net_325)","sumLogic_1: sumLogic(net_329, net_287, net_286, net_285, net_284, net_283, net_282, net_281, net_256, net_166, net_174, net_178, net_184, net_190, net_196, net_202, net_325, Cout, S1, S2, S3, S4, S5, S6, S7, S8)","",#********* End of netlist *******************,"",# Built-in model for power,gate power(p),set p=H@3,t: delta=0,"",# Built-in model for PMOStran,"function PMOStran(g, a1, a2)","i: g, a1, a2","o: a1, a2",t: delta=1e-8,"",# Built-in model for nMOStran,"function nMOStran(g, a1, a2)","i: g, a1, a2","o: a1, a2",t: delta=1e-8,"",# Built-in model for ground,gate ground(g),set g=L@3,t: delta=0]
 Ngeneric:Facet-Center|art@0||0|0||||AV
 X
 
-# Cell 8bit_LF;1{sch}
-C8bit_LF;1{sch}||schematic|1353428770695|1353537902256|
-ILF_logic;3{ic}|LF_logic@3||-33|-29|RRR||D5G4;
+# Cell 8bit_LF_OPTIMIZED;1{sch}
+C8bit_LF_OPTIMIZED;1{sch}||schematic|1353428770695|1353537902256|
+ILF_logic_OPTIMZIED;3{ic}|LF_logic@3||-33|-29|RRR||D5G4;
 IPbits_buffer;1{ic}|Pbits_bu@0||-67.5|-28|RRR||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
-IbitwisePG;1{ic}|bitwiseP@1||-21|8|RRR||D5G4;
-IbitwisePG;1{ic}|bitwiseP@2||5|8|RRR||D5G4;
-IbitwisePG;1{ic}|bitwiseP@4||-60|8|RRR||D5G4;
-IbitwisePG;1{ic}|bitwiseP@5||-73|8|RRR||D5G4;
-IbitwisePG;1{ic}|bitwiseP@6||-47|8|RRR||D5G4;
-IbitwisePG;1{ic}|bitwiseP@7||-34|8|RRR||D5G4;
-IbitwisePG;1{ic}|bitwiseP@8||-86|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@1||-21|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@2||5|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@4||-60|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@5||-73|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@6||-47|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@7||-34|8|RRR||D5G4;
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@8||-86|8|RRR||D5G4;
 IbitwisePG_2x;1{ic}|bitwiseP@9||-8|8|RRR||D5G4;
 NWire_Pin|pin@105||18|-24||||
 NWire_Pin|pin@106||18|13||||
@@ -576,8 +576,8 @@ ES7||D5G2;|pin@197||O
 ES8||D5G2;|pin@198||O
 X
 
-# Cell 8bit_LF;1{vhdl}
-C8bit_LF;1{vhdl}||artwork|1353443239273|1353443239330||FACET_message()S["-- VHDL automatically generated by the Electric VLSI Design System, version ",-- 9.03,"",-------------------- Cell a2o1_1x{sch} --------------------,"entity a2o1_1x is port(a, b, c: in BIT; y: out BIT);",  end a2o1_1x;,"",architecture a2o1_1x_BODY of a2o1_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_0, net_11, net_19, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_19);","  nmos_1: nMOStran port map(b, net_19, net_0);","  nmos_2: nMOStran port map(c, gnd, net_0);","  nmos_3: nMOStran port map(net_0, gnd, y);","  pmos_0: PMOStran port map(c, net_0, net_11);","  pmos_1: PMOStran port map(b, net_11, vdd);","  pmos_2: PMOStran port map(a, net_11, vdd);","  pmos_3: PMOStran port map(net_0, y, vdd);",  pwr_0: power port map(vdd);,end a2o1_1x_BODY;,"",-------------------- Cell and2_1x{sch} --------------------,"entity and2_1x is port(a, b: in BIT; y: out BIT);",  end and2_1x;,"",architecture and2_1x_BODY of and2_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_1, net_2, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(b, net_1, net_2);","  nmos_1: nMOStran port map(a, gnd, net_1);","  nmos_2: nMOStran port map(net_2, gnd, y);","  pmos_0: PMOStran port map(b, net_2, vdd);","  pmos_1: PMOStran port map(a, net_2, vdd);","  pmos_2: PMOStran port map(net_2, y, vdd);",  pwr_0: power port map(vdd);,end and2_1x_BODY;,"",-------------------- Cell BlackCell{sch} --------------------,"entity BlackCell is port(G_i_k, G_k_1_j, P_i_k, P_k_1_j: in BIT; G_i_j, P_i_j: ",    out BIT);,  end BlackCell;,"",architecture BlackCell_BODY of BlackCell is,"  component a2o1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"  component and2_1x port(a, b: in BIT; y: out BIT);",    end component;,"",begin,"  a2o1_1x_0: a2o1_1x port map(P_i_k, G_k_1_j, G_i_k, G_i_j);","  and2_1x_0: and2_1x port map(P_i_k, P_k_1_j, P_i_j);",end BlackCell_BODY;,"",-------------------- Cell GreyCell{sch} --------------------,"entity GreyCell is port(G_i_k, G_k_1_j, P_i_k: in BIT; G_i_j: out BIT);",  end GreyCell;,"",architecture GreyCell_BODY of GreyCell is,"  component a2o1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"",begin,"  a2o1_1x_0: a2o1_1x port map(P_i_k, G_k_1_j, G_i_k, G_i_j);",end GreyCell_BODY;,"",-------------------- Cell buf_1x{sch} --------------------,entity buf_1x is port(a: in BIT; y: out BIT);,  end buf_1x;,"",architecture buf_1x_BODY of buf_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_23, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_23);","  nmos_1: nMOStran port map(net_23, gnd, y);","  pmos_0: PMOStran port map(a, net_23, vdd);","  pmos_1: PMOStran port map(net_23, y, vdd);",  pwr_0: power port map(vdd);,end buf_1x_BODY;,"",-------------------- Cell buffer{sch} --------------------,"entity buffer is port(G_i, P_i: in BIT; G_ib, P_ib: out BIT);",  end buffer;,"",architecture buffer_BODY of buffer is,  component buf_1x port(a: in BIT; y: out BIT);,    end component;,"",begin,"  buf_1x_0: buf_1x port map(P_i, P_ib);","  buf_1x_1: buf_1x port map(G_i, G_ib);",end buffer_BODY;,"",-------------------- Cell LF_logic{sch} --------------------,"entity LF_logic is port(G0, G1, G2, G3, G4, G5, G6, G7, P1, P2, P3, P4, P5, P6, ","    P7: in BIT; O0, O1, O2, O3, O4, O5, O6, O7: out BIT);",  end LF_logic;,"",architecture LF_logic_BODY of LF_logic is,"  component BlackCell port(G_i_k, G_k_1_j, P_i_k, P_k_1_j: in BIT; G_i_j, ",    P_i_j: out BIT);,    end component;,"  component GreyCell port(G_i_k, G_k_1_j, P_i_k: in BIT; G_i_j: out BIT);",    end component;,  component buf_1x port(a: in BIT; y: out BIT);,    end component;,"  component buffer port(G_i, P_i: in BIT; G_ib, P_ib: out BIT);",    end component;,"","  signal net_103, net_106, net_112, net_116, net_118, net_133, net_135, net_144,","     net_146, net_159, net_160, net_69, net_73, net_75, net_78, net_83, net_93, ","    net_94, net_97: BIT;","",begin,"  BlackCel_0: BlackCell port map(G3, G2, P3, P2, net_159, net_160);","  BlackCel_1: BlackCell port map(G5, G4, P5, P4, net_73, net_69);","  BlackCel_2: BlackCell port map(G7, G6, P7, P6, net_75, net_78);","  BlackCel_3: BlackCell port map(net_75, net_73, net_78, net_69, net_103, ",    net_106);,"  GreyCell_0: GreyCell port map(G1, G0, P1, net_83);","  GreyCell_1: GreyCell port map(net_159, net_83, net_160, net_97);","  GreyCell_2: GreyCell port map(net_103, net_97, net_106, O7);","  GreyCell_3: GreyCell port map(net_94, net_97, net_93, net_112);","  GreyCell_4: GreyCell port map(net_118, O5, net_116, O6);","  GreyCell_5: GreyCell port map(net_135, O3, net_133, O4);","  GreyCell_6: GreyCell port map(net_146, O1, net_144, O2);","  buf_1x_0: buf_1x port map(net_83, O1);","  buf_1x_1: buf_1x port map(net_97, O3);","  buf_1x_3: buf_1x port map(net_112, O5);","  buf_1x_4: buf_1x port map(G0, O0);","  buffer_1: buffer port map(G2, P2, net_146, net_144);","  buffer_2: buffer port map(G4, P4, net_135, net_133);","  buffer_3: buffer port map(G6, P6, net_118, net_116);","  buffer_4: buffer port map(net_73, net_69, net_94, net_93);",end LF_logic_BODY;,"",-------------------- Cell inv_1x{sch} --------------------,entity inv_1x is port(a: in BIT; y: out BIT);,  end inv_1x;,"",architecture inv_1x_BODY of inv_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, y);","  pmos_0: PMOStran port map(a, y, vdd);",  pwr_0: power port map(vdd);,end inv_1x_BODY;,"",-------------------- Cell nand2_1x{sch} --------------------,"entity nand2_1x is port(a, b: in BIT; y: out BIT);",  end nand2_1x;,"",architecture nand2_1x_BODY of nand2_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_5, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(b, net_5, y);","  nmos_1: nMOStran port map(a, gnd, net_5);","  pmos_0: PMOStran port map(b, y, vdd);","  pmos_1: PMOStran port map(a, y, vdd);",  pwr_0: power port map(vdd);,end nand2_1x_BODY;,"",-------------------- Cell o2a1_1x{sch} --------------------,"entity o2a1_1x is port(a, b, c: in BIT; y: out BIT);",  end o2a1_1x;,"",architecture o2a1_1x_BODY of o2a1_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_12, net_35, net_7, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_7);","  nmos_1: nMOStran port map(b, gnd, net_7);","  nmos_2: nMOStran port map(c, net_7, net_12);","  nmos_3: nMOStran port map(net_12, gnd, y);","  pmos_0: PMOStran port map(b, net_12, net_35);","  pmos_1: PMOStran port map(a, net_35, vdd);","  pmos_3: PMOStran port map(c, net_12, vdd);","  pmos_4: PMOStran port map(net_12, y, vdd);",  pwr_0: power port map(vdd);,end o2a1_1x_BODY;,"",-------------------- Cell bitwisePG{sch} --------------------,"entity bitwisePG is port(A, B: in BIT; G, P: out BIT);",  end bitwisePG;,"",architecture bitwisePG_BODY of bitwisePG is,  component inv_1x port(a: in BIT; y: out BIT);,    end component;,"  component nand2_1x port(a, b: in BIT; y: out BIT);",    end component;,"  component o2a1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"",  signal net_1: BIT;,"",begin,"  inv_1x_0: inv_1x port map(net_1, G);","  nand2_1x_0: nand2_1x port map(A, B, net_1);","  o2a1_1x_0: o2a1_1x port map(A, B, net_1, P);",end bitwisePG_BODY;,"",-------------------- Cell xor2_1x{sch} --------------------,"entity xor2_1x is port(a, b: in BIT; y: out BIT);",  end xor2_1x;,"",architecture xor2_1x_BODY of xor2_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal ab, bb, gnd, net_3, net_4, net_7, net_8, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_3);","  nmos_1: nMOStran port map(ab, gnd, net_4);","  nmos_2: nMOStran port map(b, net_3, y);","  nmos_3: nMOStran port map(bb, net_4, y);","  nmos_4: nMOStran port map(b, gnd, bb);","  nmos_5: nMOStran port map(a, gnd, ab);","  pmos_0: PMOStran port map(b, y, net_7);","  pmos_1: PMOStran port map(ab, net_7, vdd);","  pmos_2: PMOStran port map(bb, y, net_8);","  pmos_3: PMOStran port map(a, net_8, vdd);","  pmos_4: PMOStran port map(b, bb, vdd);","  pmos_5: PMOStran port map(a, ab, vdd);",  pwr_0: power port map(vdd);,end xor2_1x_BODY;,"",-------------------- Cell sumLogic{sch} --------------------,"entity sumLogic is port(G8, O0, O1, O2, O3, O4, O5, O6, O7, P1, P2, P3, P4, P5, ","    P6, P7, P8: in BIT; Cout, S1, S2, S3, S4, S5, S6, S7, S8: out BIT);",  end sumLogic;,"",architecture sumLogic_BODY of sumLogic is,"  component a2o1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"  component xor2_1x port(a, b: in BIT; y: out BIT);",    end component;,"",begin,"  a2o1_1x_0: a2o1_1x port map(O7, P8, G8, Cout);","  xor2_1x_0: xor2_1x port map(O0, P1, S1);","  xor2_1x_24: xor2_1x port map(O1, P2, S2);","  xor2_1x_25: xor2_1x port map(O2, P3, S3);","  xor2_1x_26: xor2_1x port map(O3, P4, S4);","  xor2_1x_27: xor2_1x port map(O4, P5, S5);","  xor2_1x_28: xor2_1x port map(O5, P6, S6);","  xor2_1x_29: xor2_1x port map(O6, P7, S7);","  xor2_1x_30: xor2_1x port map(O7, P8, S8);",end sumLogic_BODY;,"",-------------------- Cell 8bit_LF{sch} --------------------,"entity E_8bit_LF is port(A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, ","    B6, B7, B8, Cin: in BIT; Cout, S1, S2, S3, S4, S5, S6, S7, S8: out BIT);",  end E_8bit_LF;,"",architecture E_8bit_LF_BODY of E_8bit_LF is,"  component LF_logic port(G0, G1, G2, G3, G4, G5, G6, G7, P1, P2, P3, P4, P5, ","    P6, P7: in BIT; O0, O1, O2, O3, O4, O5, O6, O7: out BIT);",    end component;,"  component bitwisePG port(A, B: in BIT; G, P: out BIT);",    end component;,"  component sumLogic port(G8, O0, O1, O2, O3, O4, O5, O6, O7, P1, P2, P3, P4, ","    P5, P6, P7, P8: in BIT; Cout, S1, S2, S3, S4, S5, S6, S7, S8: out BIT);",    end component;,"","  signal net_164, net_166, net_169, net_174, net_175, net_178, net_181, net_184,","     net_187, net_190, net_193, net_196, net_199, net_202, net_256, net_281, net_282","    , net_283, net_284, net_285, net_286, net_287, net_325, net_329: BIT;","",begin,"  LF_logic_3: LF_logic port map(Cin, net_164, net_169, net_175, net_181, ","    net_187, net_193, net_199, net_166, net_174, net_178, net_184, net_190, ","    net_196, net_202, net_287, net_286, net_285, net_284, net_283, net_282, ","    net_281, net_256);","  bitwiseP_0: bitwisePG port map(A2, B2, net_169, net_174);","  bitwiseP_1: bitwisePG port map(A3, B3, net_175, net_178);","  bitwiseP_2: bitwisePG port map(A1, B1, net_164, net_166);","  bitwiseP_4: bitwisePG port map(A6, B6, net_193, net_196);","  bitwiseP_5: bitwisePG port map(A7, B7, net_199, net_202);","  bitwiseP_6: bitwisePG port map(A5, B5, net_187, net_190);","  bitwiseP_7: bitwisePG port map(A4, B4, net_181, net_184);","  bitwiseP_8: bitwisePG port map(A8, B8, net_329, net_325);","  sumLogic_1: sumLogic port map(net_329, net_287, net_286, net_285, net_284, ","    net_283, net_282, net_281, net_256, net_166, net_174, net_178, net_184, ","    net_190, net_196, net_202, net_325, Cout, S1, S2, S3, S4, S5, S6, S7, S8);",end E_8bit_LF_BODY;]
+# Cell 8bit_LF_OPTIMIZED;1{vhdl}
+C8bit_LF_OPTIMIZED;1{vhdl}||artwork|1353443239273|1353443239330||FACET_message()S["-- VHDL automatically generated by the Electric VLSI Design System, version ",-- 9.03,"",-------------------- Cell a2o1_1x{sch} --------------------,"entity a2o1_1x is port(a, b, c: in BIT; y: out BIT);",  end a2o1_1x;,"",architecture a2o1_1x_BODY of a2o1_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_0, net_11, net_19, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_19);","  nmos_1: nMOStran port map(b, net_19, net_0);","  nmos_2: nMOStran port map(c, gnd, net_0);","  nmos_3: nMOStran port map(net_0, gnd, y);","  pmos_0: PMOStran port map(c, net_0, net_11);","  pmos_1: PMOStran port map(b, net_11, vdd);","  pmos_2: PMOStran port map(a, net_11, vdd);","  pmos_3: PMOStran port map(net_0, y, vdd);",  pwr_0: power port map(vdd);,end a2o1_1x_BODY;,"",-------------------- Cell and2_1x{sch} --------------------,"entity and2_1x is port(a, b: in BIT; y: out BIT);",  end and2_1x;,"",architecture and2_1x_BODY of and2_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_1, net_2, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(b, net_1, net_2);","  nmos_1: nMOStran port map(a, gnd, net_1);","  nmos_2: nMOStran port map(net_2, gnd, y);","  pmos_0: PMOStran port map(b, net_2, vdd);","  pmos_1: PMOStran port map(a, net_2, vdd);","  pmos_2: PMOStran port map(net_2, y, vdd);",  pwr_0: power port map(vdd);,end and2_1x_BODY;,"",-------------------- Cell BlackCell{sch} --------------------,"entity BlackCell is port(G_i_k, G_k_1_j, P_i_k, P_k_1_j: in BIT; G_i_j, P_i_j: ",    out BIT);,  end BlackCell;,"",architecture BlackCell_BODY of BlackCell is,"  component a2o1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"  component and2_1x port(a, b: in BIT; y: out BIT);",    end component;,"",begin,"  a2o1_1x_0: a2o1_1x port map(P_i_k, G_k_1_j, G_i_k, G_i_j);","  and2_1x_0: and2_1x port map(P_i_k, P_k_1_j, P_i_j);",end BlackCell_BODY;,"",-------------------- Cell GreyCell{sch} --------------------,"entity GreyCell is port(G_i_k, G_k_1_j, P_i_k: in BIT; G_i_j: out BIT);",  end GreyCell;,"",architecture GreyCell_BODY of GreyCell is,"  component a2o1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"",begin,"  a2o1_1x_0: a2o1_1x port map(P_i_k, G_k_1_j, G_i_k, G_i_j);",end GreyCell_BODY;,"",-------------------- Cell buf_1x{sch} --------------------,entity buf_1x is port(a: in BIT; y: out BIT);,  end buf_1x;,"",architecture buf_1x_BODY of buf_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_23, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_23);","  nmos_1: nMOStran port map(net_23, gnd, y);","  pmos_0: PMOStran port map(a, net_23, vdd);","  pmos_1: PMOStran port map(net_23, y, vdd);",  pwr_0: power port map(vdd);,end buf_1x_BODY;,"",-------------------- Cell buffer{sch} --------------------,"entity buffer is port(G_i, P_i: in BIT; G_ib, P_ib: out BIT);",  end buffer;,"",architecture buffer_BODY of buffer is,  component buf_1x port(a: in BIT; y: out BIT);,    end component;,"",begin,"  buf_1x_0: buf_1x port map(P_i, P_ib);","  buf_1x_1: buf_1x port map(G_i, G_ib);",end buffer_BODY;,"",-------------------- Cell LF_logic{sch} --------------------,"entity LF_logic is port(G0, G1, G2, G3, G4, G5, G6, G7, P1, P2, P3, P4, P5, P6, ","    P7: in BIT; O0, O1, O2, O3, O4, O5, O6, O7: out BIT);",  end LF_logic;,"",architecture LF_logic_BODY of LF_logic is,"  component BlackCell port(G_i_k, G_k_1_j, P_i_k, P_k_1_j: in BIT; G_i_j, ",    P_i_j: out BIT);,    end component;,"  component GreyCell port(G_i_k, G_k_1_j, P_i_k: in BIT; G_i_j: out BIT);",    end component;,  component buf_1x port(a: in BIT; y: out BIT);,    end component;,"  component buffer port(G_i, P_i: in BIT; G_ib, P_ib: out BIT);",    end component;,"","  signal net_103, net_106, net_112, net_116, net_118, net_133, net_135, net_144,","     net_146, net_159, net_160, net_69, net_73, net_75, net_78, net_83, net_93, ","    net_94, net_97: BIT;","",begin,"  BlackCel_0: BlackCell port map(G3, G2, P3, P2, net_159, net_160);","  BlackCel_1: BlackCell port map(G5, G4, P5, P4, net_73, net_69);","  BlackCel_2: BlackCell port map(G7, G6, P7, P6, net_75, net_78);","  BlackCel_3: BlackCell port map(net_75, net_73, net_78, net_69, net_103, ",    net_106);,"  GreyCell_0: GreyCell port map(G1, G0, P1, net_83);","  GreyCell_1: GreyCell port map(net_159, net_83, net_160, net_97);","  GreyCell_2: GreyCell port map(net_103, net_97, net_106, O7);","  GreyCell_3: GreyCell port map(net_94, net_97, net_93, net_112);","  GreyCell_4: GreyCell port map(net_118, O5, net_116, O6);","  GreyCell_5: GreyCell port map(net_135, O3, net_133, O4);","  GreyCell_6: GreyCell port map(net_146, O1, net_144, O2);","  buf_1x_0: buf_1x port map(net_83, O1);","  buf_1x_1: buf_1x port map(net_97, O3);","  buf_1x_3: buf_1x port map(net_112, O5);","  buf_1x_4: buf_1x port map(G0, O0);","  buffer_1: buffer port map(G2, P2, net_146, net_144);","  buffer_2: buffer port map(G4, P4, net_135, net_133);","  buffer_3: buffer port map(G6, P6, net_118, net_116);","  buffer_4: buffer port map(net_73, net_69, net_94, net_93);",end LF_logic_BODY;,"",-------------------- Cell inv_1x{sch} --------------------,entity inv_1x is port(a: in BIT; y: out BIT);,  end inv_1x;,"",architecture inv_1x_BODY of inv_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, y);","  pmos_0: PMOStran port map(a, y, vdd);",  pwr_0: power port map(vdd);,end inv_1x_BODY;,"",-------------------- Cell nand2_1x{sch} --------------------,"entity nand2_1x is port(a, b: in BIT; y: out BIT);",  end nand2_1x;,"",architecture nand2_1x_BODY of nand2_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_5, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(b, net_5, y);","  nmos_1: nMOStran port map(a, gnd, net_5);","  pmos_0: PMOStran port map(b, y, vdd);","  pmos_1: PMOStran port map(a, y, vdd);",  pwr_0: power port map(vdd);,end nand2_1x_BODY;,"",-------------------- Cell o2a1_1x{sch} --------------------,"entity o2a1_1x is port(a, b, c: in BIT; y: out BIT);",  end o2a1_1x;,"",architecture o2a1_1x_BODY of o2a1_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal gnd, net_12, net_35, net_7, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_7);","  nmos_1: nMOStran port map(b, gnd, net_7);","  nmos_2: nMOStran port map(c, net_7, net_12);","  nmos_3: nMOStran port map(net_12, gnd, y);","  pmos_0: PMOStran port map(b, net_12, net_35);","  pmos_1: PMOStran port map(a, net_35, vdd);","  pmos_3: PMOStran port map(c, net_12, vdd);","  pmos_4: PMOStran port map(net_12, y, vdd);",  pwr_0: power port map(vdd);,end o2a1_1x_BODY;,"",-------------------- Cell bitwisePG{sch} --------------------,"entity bitwisePG is port(A, B: in BIT; G, P: out BIT);",  end bitwisePG;,"",architecture bitwisePG_BODY of bitwisePG is,  component inv_1x port(a: in BIT; y: out BIT);,    end component;,"  component nand2_1x port(a, b: in BIT; y: out BIT);",    end component;,"  component o2a1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"",  signal net_1: BIT;,"",begin,"  inv_1x_0: inv_1x port map(net_1, G);","  nand2_1x_0: nand2_1x port map(A, B, net_1);","  o2a1_1x_0: o2a1_1x port map(A, B, net_1, P);",end bitwisePG_BODY;,"",-------------------- Cell xor2_1x{sch} --------------------,"entity xor2_1x is port(a, b: in BIT; y: out BIT);",  end xor2_1x;,"",architecture xor2_1x_BODY of xor2_1x is,  component ground port(gnd: out BIT);,    end component;,"  component nMOStran port(g: in BIT; s, d: inout BIT);",    end component;,"  component PMOStran port(g: in BIT; s, d: inout BIT);",    end component;,  component power port(vdd: out BIT);,    end component;,"","  signal ab, bb, gnd, net_3, net_4, net_7, net_8, vdd: BIT;","",begin,  gnd_0: ground port map(gnd);,"  nmos_0: nMOStran port map(a, gnd, net_3);","  nmos_1: nMOStran port map(ab, gnd, net_4);","  nmos_2: nMOStran port map(b, net_3, y);","  nmos_3: nMOStran port map(bb, net_4, y);","  nmos_4: nMOStran port map(b, gnd, bb);","  nmos_5: nMOStran port map(a, gnd, ab);","  pmos_0: PMOStran port map(b, y, net_7);","  pmos_1: PMOStran port map(ab, net_7, vdd);","  pmos_2: PMOStran port map(bb, y, net_8);","  pmos_3: PMOStran port map(a, net_8, vdd);","  pmos_4: PMOStran port map(b, bb, vdd);","  pmos_5: PMOStran port map(a, ab, vdd);",  pwr_0: power port map(vdd);,end xor2_1x_BODY;,"",-------------------- Cell sumLogic{sch} --------------------,"entity sumLogic is port(G8, O0, O1, O2, O3, O4, O5, O6, O7, P1, P2, P3, P4, P5, ","    P6, P7, P8: in BIT; Cout, S1, S2, S3, S4, S5, S6, S7, S8: out BIT);",  end sumLogic;,"",architecture sumLogic_BODY of sumLogic is,"  component a2o1_1x port(a, b, c: in BIT; y: out BIT);",    end component;,"  component xor2_1x port(a, b: in BIT; y: out BIT);",    end component;,"",begin,"  a2o1_1x_0: a2o1_1x port map(O7, P8, G8, Cout);","  xor2_1x_0: xor2_1x port map(O0, P1, S1);","  xor2_1x_24: xor2_1x port map(O1, P2, S2);","  xor2_1x_25: xor2_1x port map(O2, P3, S3);","  xor2_1x_26: xor2_1x port map(O3, P4, S4);","  xor2_1x_27: xor2_1x port map(O4, P5, S5);","  xor2_1x_28: xor2_1x port map(O5, P6, S6);","  xor2_1x_29: xor2_1x port map(O6, P7, S7);","  xor2_1x_30: xor2_1x port map(O7, P8, S8);",end sumLogic_BODY;,"",-------------------- Cell 8bit_LF{sch} --------------------,"entity E_8bit_LF is port(A1, A2, A3, A4, A5, A6, A7, A8, B1, B2, B3, B4, B5, ","    B6, B7, B8, Cin: in BIT; Cout, S1, S2, S3, S4, S5, S6, S7, S8: out BIT);",  end E_8bit_LF;,"",architecture E_8bit_LF_BODY of E_8bit_LF is,"  component LF_logic port(G0, G1, G2, G3, G4, G5, G6, G7, P1, P2, P3, P4, P5, ","    P6, P7: in BIT; O0, O1, O2, O3, O4, O5, O6, O7: out BIT);",    end component;,"  component bitwisePG port(A, B: in BIT; G, P: out BIT);",    end component;,"  component sumLogic port(G8, O0, O1, O2, O3, O4, O5, O6, O7, P1, P2, P3, P4, ","    P5, P6, P7, P8: in BIT; Cout, S1, S2, S3, S4, S5, S6, S7, S8: out BIT);",    end component;,"","  signal net_164, net_166, net_169, net_174, net_175, net_178, net_181, net_184,","     net_187, net_190, net_193, net_196, net_199, net_202, net_256, net_281, net_282","    , net_283, net_284, net_285, net_286, net_287, net_325, net_329: BIT;","",begin,"  LF_logic_3: LF_logic port map(Cin, net_164, net_169, net_175, net_181, ","    net_187, net_193, net_199, net_166, net_174, net_178, net_184, net_190, ","    net_196, net_202, net_287, net_286, net_285, net_284, net_283, net_282, ","    net_281, net_256);","  bitwiseP_0: bitwisePG port map(A2, B2, net_169, net_174);","  bitwiseP_1: bitwisePG port map(A3, B3, net_175, net_178);","  bitwiseP_2: bitwisePG port map(A1, B1, net_164, net_166);","  bitwiseP_4: bitwisePG port map(A6, B6, net_193, net_196);","  bitwiseP_5: bitwisePG port map(A7, B7, net_199, net_202);","  bitwiseP_6: bitwisePG port map(A5, B5, net_187, net_190);","  bitwiseP_7: bitwisePG port map(A4, B4, net_181, net_184);","  bitwiseP_8: bitwisePG port map(A8, B8, net_329, net_325);","  sumLogic_1: sumLogic port map(net_329, net_287, net_286, net_285, net_284, ","    net_283, net_282, net_281, net_256, net_166, net_174, net_178, net_184, ","    net_190, net_196, net_202, net_325, Cout, S1, S2, S3, S4, S5, S6, S7, S8);",end E_8bit_LF_BODY;]
 Ngeneric:Facet-Center|art@0||0|0||||AV
 X
 
@@ -962,8 +962,8 @@ EG_k-1_j||D5G2;|pin@2||I
 EP_i_k||D5G2;|pin@3||I
 X
 
-# Cell LF_logic;3{ic}
-CLF_logic;3{ic}||artwork|1353436922156|1353438909843|E
+# Cell LF_logic_OPTIMZIED;3{ic}
+CLF_logic_OPTIMZIED;3{ic}||artwork|1353436922156|1353438909843|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOpened-Thicker-Polygon|art@1||0|0|6|34|||SCHEM_function(D5G2;)SLF_logic|trace()V[-3/-17,-3/17,3/17,3/-17,-3/-17]
 Nschematic:Bus_Pin|pin@2||-5|16||||
@@ -1060,8 +1060,8 @@ EP6||D5G2;|pin@46||I
 EP7||D5G2;|pin@48||I
 X
 
-# Cell LF_logic;2{ic}
-CLF_logic;2{ic}||artwork|1353436441931|1353436900245|E
+# Cell LF_logic_OPTIMZIED;2{ic}
+CLF_logic_OPTIMZIED;2{ic}||artwork|1353436441931|1353436900245|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOpened-Thicker-Polygon|art@1||0|0|6|30|||SCHEM_function(D5G2;)SLF_logic|trace()V[-3/-15,-3/15,3/15,3/-15,-3/-15]
 Nschematic:Bus_Pin|pin@0||-5|14||||
@@ -1170,8 +1170,8 @@ EP7||D5G2;|pin@44||I
 EP8||D5G2;|pin@50||I
 X
 
-# Cell LF_logic;1{ic}
-CLF_logic;1{ic}||artwork|1353431970076|1353431970076|E
+# Cell LF_logic_OPTIMZIED;1{ic}
+CLF_logic_OPTIMZIED;1{ic}||artwork|1353431970076|1353431970076|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOpened-Thicker-Polygon|art@1||0|0|6|32|||SCHEM_function(D5G2;)SLF_logic|trace()V[-3/-16,-3/16,3/16,3/-16,-3/-16]
 Nschematic:Bus_Pin|pin@0||-5|15||||
@@ -1272,8 +1272,8 @@ EP6||D5G2;|pin@44||I
 EP7||D5G2;|pin@46||I
 X
 
-# Cell LF_logic;1{lay}
-CLF_logic;1{lay}||mocmos|1353600360488|1353607433971||ATTR_NCC(D5G1;NT)S["exportsConnectedByParent vdd /vdd_[0-9]+/","exportsConnectedByParent gnd /gnd_[0-9]+/"]|DRC_last_good_drc_area_date()G1353607438875|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353607438875
+# Cell LF_logic_OPTIMZIED;1{lay}
+CLF_logic_OPTIMZIED;1{lay}||mocmos|1353600360488|1353607433971||ATTR_NCC(D5G1;NT)S["exportsConnectedByParent vdd /vdd_[0-9]+/","exportsConnectedByParent gnd /gnd_[0-9]+/"]|DRC_last_good_drc_area_date()G1353607438875|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353607438875
 IBlackCell_2x;1{lay}|BlackCel@0||0|330|||D5G4;
 IBlackCell;2{lay}|BlackCel@1||-3|550|||D5G4;
 IBlackCell;2{lay}|BlackCel@2||-3|770|||D5G4;
@@ -1566,8 +1566,8 @@ Evdd_6||D5G2;|buffer@2|vdd|P
 Evdd_7||D5G2;|BlackCel@2|vdd|P
 X
 
-# Cell LF_logic;1{sch}
-CLF_logic;1{sch}||schematic|1353429105476|1353606757716|
+# Cell LF_logic_OPTIMZIED;1{sch}
+CLF_logic_OPTIMZIED;1{sch}||schematic|1353429105476|1353606757716|
 IBlackCell;1{ic}|BlackCel@1||-53|5|RRR||D5G4;
 IBlackCell;1{ic}|BlackCel@2||-85|5|RRR||D5G4;
 IBlackCell;1{ic}|BlackCel@3||-85|-15|RRR||D5G4;
@@ -1579,7 +1579,7 @@ IGreyCell_4x;2{ic}|GreyCell@9||-15|-12.75|RRR||D5G4;
 IGreyCell_2x;1{ic}|GreyCell@10||15|5.5|RRR||D5G4;
 IGreyCell_4x;2{ic}|GreyCell@13||-66|-60|RRR||D5G4;
 IGreyCell_2x;1{ic}|GreyCell@15||-50|-35|RRR||D5G4;
-ILF_logic;3{ic}|LF_logic@2||40|40|||D5G4;
+ILF_logic_OPTIMZIED;3{ic}|LF_logic@2||40|40|||D5G4;
 Ibuf_1x;1{ic}|buf_1x@0||15|-16|RRR||D5G4;
 Ibuf_1x;1{ic}|buf_1x@4||30|7|RRR||D5G4;
 Ibuf_2x;1{ic}|buf_2x@1||-50|-61|RRR||D5G4;
@@ -3283,123 +3283,6 @@ Eb||D5G2;|pin@18||I
 Ey||D5G2;|pin@20||O
 X
 
-# Cell bitwisePG;1{ic}
-CbitwisePG;1{ic}||artwork|1353428338182|1353435717575|E
-Ngeneric:Facet-Center|art@0||0|0||||AV
-NOpened-Thicker-Polygon|art@1||0|0|6|10|||SCHEM_function(D5G2;)SbitwisePG|trace()V[-3/-5,-3/5,3/5,3/-5,-3/-5]
-Nschematic:Bus_Pin|pin@0||-5|1||||
-Nschematic:Wire_Pin|pin@1||-3|1||||
-Nschematic:Bus_Pin|pin@2||-5|-1||||
-Nschematic:Wire_Pin|pin@3||-3|-1||||
-Nschematic:Bus_Pin|pin@4||5|1||||
-Nschematic:Wire_Pin|pin@5||3|1||||
-Nschematic:Bus_Pin|pin@6||5|-1||||
-Nschematic:Wire_Pin|pin@7||3|-1||||
-Aschematic:wire|net@0|||0|pin@1||-3|1|pin@0||-5|1
-Aschematic:wire|net@1|||0|pin@3||-3|-1|pin@2||-5|-1
-Aschematic:wire|net@2|||1800|pin@5||3|1|pin@4||5|1
-Aschematic:wire|net@3|||1800|pin@7||3|-1|pin@6||5|-1
-EA_i|A|D5G2;|pin@0||I
-EB_i|B|D5G2;|pin@2||I
-EG_i|G|D5G2;|pin@4||O
-EP_i|P|D5G2;|pin@6||O
-X
-
-# Cell bitwisePG;1{lay}
-CbitwisePG;1{lay}||mocmos|1353434694853|1353599055787||DRC_last_good_drc_area_date()G1353597663016|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353599196978
-Ngeneric:Facet-Center|art@0||0|0||||AV
-NMetal-2-Metal-3-Con|contact@0||8|30||||
-NMetal-2-Metal-3-Con|contact@1||72|30||||
-NMetal-2-Metal-3-Con|contact@2||40|30||||
-NMetal-2-Metal-3-Con|contact@3||0|50||||
-NMetal-2-Metal-3-Con|contact@4||24|50||||
-NMetal-2-Metal-3-Con|contact@5||16|70||||
-NMetal-2-Metal-3-Con|contact@6||32|70||||
-Iinv_1x;1{lay}|inv_1x@0||70|1|||D5G4;
-Inand2_1x;1{lay}|nand2_1x@0||-2|1|||D5G4;
-Io2a1_4x;1{lay}|o2a1_4x@0||20|1|||D5G4;
-NMetal-1-Pin|pin@0||24|1||||
-NMetal-1-Pin|pin@1||24|91||||
-NMetal-2-Pin|pin@2||40|37.5||||
-NMetal-2-Pin|pin@3||24|43||||
-NMetal-2-Pin|pin@4||32|61||||
-AMetal-2|net@4||1|S2700|contact@0||8|30|nand2_1x@0|y|8|46
-AMetal-2|net@6||1|S2700|contact@1||72|30|inv_1x@0|a|72|41
-AMetal-3|net@8||1|S1800|contact@0||8|30|contact@2||40|30
-AMetal-3|net@9||1|S1800|contact@2||40|30|contact@1||72|30
-AMetal-2|net@10||1|S900|contact@3||0|50|nand2_1x@0|a|0|38
-AMetal-3|net@11||1|S1800|contact@3||0|50|contact@4||24|50
-AMetal-2|net@13||1|S900|contact@5||16|70|nand2_1x@0|b|16|54
-AMetal-3|net@15||1|S0|contact@6||32|70|contact@5||16|70
-AMetal-1|net@16||5|S1800|nand2_1x@0|gnd|0|1|pin@0||24|1
-AMetal-1|net@17||5|S0|inv_1x@0|gnd|72|1|pin@0||24|1
-AMetal-1|net@18||5|S0|inv_1x@0|vdd|72|91|pin@1||24|91
-AMetal-1|net@19||5|S1800|nand2_1x@0|vdd|0|91|pin@1||24|91
-AMetal-2|net@20||1|S2700|contact@2||40|30|pin@2||40|37.5
-AMetal-2|net@21||1|S900|contact@4||24|50|pin@3||24|43
-AMetal-2|net@22||1|S900|contact@6||32|70|pin@4||32|61
-AMetal-1|net@23||5|S1800|nand2_1x@0|gnd|0|1|inv_1x@0|gnd|72|1
-AMetal-1|net@24||5|S0|inv_1x@0|vdd|72|91|nand2_1x@0|vdd|0|91
-AMetal-1|net@25||5|S0|o2a1_4x@0|gnd|24|1|nand2_1x@0|gnd|0|1
-AMetal-1|net@26||5|S0|o2a1_4x@0|vdd|24|91|nand2_1x@0|vdd|0|91
-AMetal-2|net@27||1|S0|o2a1_4x@0|a|24|43|pin@3||24|43
-AMetal-2|net@28||1|S900|pin@4||32|61|o2a1_4x@0|b|32|43
-AMetal-2|net@29||1|S2700|pin@2||40|37.5|o2a1_4x@0|c|40|43
-EA||D5G2;|nand2_1x@0|a|I
-EB||D5G2;|nand2_1x@0|b|I
-EG||D5G2;|inv_1x@0|y|O
-EP||D5G2;|o2a1_4x@0|y|O
-Egnd||D5G2;|nand2_1x@0|gnd|G
-Evdd||D5G2;|nand2_1x@0|vdd|P
-X
-
-# Cell bitwisePG;1{sch}
-CbitwisePG;1{sch}||schematic|1353428012828|1353593556036|
-Ngeneric:Facet-Center|art@0||0|0||||AV
-IbitwisePG;1{ic}|bitwiseP@0||32.5|36|||D5G4;
-Iinv_1x;1{ic}|inv_1x@0||3|12|||D5G4;
-Inand2_1x;1{ic}|nand2_1x@0||-17|12|||D5G4;
-Io2a1_4x;1{ic}|o2a1_4x@0||-2|15|||D5G4;
-NWire_Pin|pin@0||-7.5|19||||
-NWire_Pin|pin@1||-7.5|12||||
-NWire_Pin|pin@2||-33.5|25||||
-NWire_Pin|pin@3||-25|14||||
-NWire_Pin|pin@4||-25|25||||
-NWire_Pin|pin@5||-13|23||||
-NWire_Pin|pin@6||-13|20.5||||
-NWire_Pin|pin@7||-33|20.5||||
-NWire_Pin|pin@8||-28|10||||
-NWire_Pin|pin@9||-28|20.5||||
-NWire_Pin|pin@10||20|21||||
-NWire_Pin|pin@11||20|12||||
-NWire_Pin|pin@12||-2|19||||
-NWire_Pin|pin@13||-2|25||||
-NWire_Pin|pin@14||-2|23||||
-Awire|net@2|||0|inv_1x@0|a|-2|12|pin@1||-7.5|12
-Awire|net@3|||0|pin@1||-7.5|12|nand2_1x@0|y|-11|12
-Awire|net@4|||900|pin@0||-7.5|19|pin@1||-7.5|12
-Awire|net@6|||0|nand2_1x@0|a|-22|14|pin@3||-25|14
-Awire|net@8|||0|pin@4||-25|25|pin@2||-33.5|25
-Awire|net@9|||2700|pin@3||-25|14|pin@4||-25|25
-Awire|net@11|||900|pin@5||-13|23|pin@6||-13|20.5
-Awire|net@13|||0|nand2_1x@0|b|-22|10|pin@8||-28|10
-Awire|net@14|||0|pin@6||-13|20.5|pin@9||-28|20.5
-Awire|net@15|||0|pin@9||-28|20.5|pin@7||-33|20.5
-Awire|net@16|||2700|pin@8||-28|10|pin@9||-28|20.5
-Awire|net@18|||1800|inv_1x@0|y|9|12|pin@11||20|12
-Awire|net@19|||1800|pin@0||-7.5|19|pin@12||-2|19
-Awire|net@20|||1800|pin@4||-25|25|pin@13||-2|25
-Awire|net@21|||1800|pin@5||-13|23|pin@14||-2|23
-Awire|net@23|||0|pin@13||-2|25|o2a1_4x@0|a|-3|25
-Awire|net@24|||0|pin@14||-2|23|o2a1_4x@0|b|-3|23
-Awire|net@25|||0|pin@12||-2|19|o2a1_4x@0|c|-3|19
-Awire|net@27|||0|pin@10||20|21|o2a1_4x@0|y|14|21
-EA_i|A|D5G2;|pin@2||I
-EB_i|B|D5G2;|pin@7||I
-EG_i|G|D5G2;|pin@11||O
-EP_i|P|D5G2;|pin@10||O
-X
-
 # Cell bitwisePG_2x;1{ic}
 CbitwisePG_2x;1{ic}||artwork|1353428338182|1353435717575|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
@@ -3511,17 +3394,134 @@ EG_i|G|D5G2;|pin@11||O
 EP_i|P|D5G2;|pin@10||O
 X
 
+# Cell bitwisePG_OPTIMIZED;1{ic}
+CbitwisePG_OPTIMIZED;1{ic}||artwork|1353428338182|1353435717575|E
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOpened-Thicker-Polygon|art@1||0|0|6|10|||SCHEM_function(D5G2;)SbitwisePG|trace()V[-3/-5,-3/5,3/5,3/-5,-3/-5]
+Nschematic:Bus_Pin|pin@0||-5|1||||
+Nschematic:Wire_Pin|pin@1||-3|1||||
+Nschematic:Bus_Pin|pin@2||-5|-1||||
+Nschematic:Wire_Pin|pin@3||-3|-1||||
+Nschematic:Bus_Pin|pin@4||5|1||||
+Nschematic:Wire_Pin|pin@5||3|1||||
+Nschematic:Bus_Pin|pin@6||5|-1||||
+Nschematic:Wire_Pin|pin@7||3|-1||||
+Aschematic:wire|net@0|||0|pin@1||-3|1|pin@0||-5|1
+Aschematic:wire|net@1|||0|pin@3||-3|-1|pin@2||-5|-1
+Aschematic:wire|net@2|||1800|pin@5||3|1|pin@4||5|1
+Aschematic:wire|net@3|||1800|pin@7||3|-1|pin@6||5|-1
+EA_i|A|D5G2;|pin@0||I
+EB_i|B|D5G2;|pin@2||I
+EG_i|G|D5G2;|pin@4||O
+EP_i|P|D5G2;|pin@6||O
+X
+
+# Cell bitwisePG_OPTIMIZED;1{lay}
+CbitwisePG_OPTIMIZED;1{lay}||mocmos|1353434694853|1353599055787||DRC_last_good_drc_area_date()G1353597663016|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353599196978
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NMetal-2-Metal-3-Con|contact@0||8|30||||
+NMetal-2-Metal-3-Con|contact@1||72|30||||
+NMetal-2-Metal-3-Con|contact@2||40|30||||
+NMetal-2-Metal-3-Con|contact@3||0|50||||
+NMetal-2-Metal-3-Con|contact@4||24|50||||
+NMetal-2-Metal-3-Con|contact@5||16|70||||
+NMetal-2-Metal-3-Con|contact@6||32|70||||
+Iinv_1x;1{lay}|inv_1x@0||70|1|||D5G4;
+Inand2_1x;1{lay}|nand2_1x@0||-2|1|||D5G4;
+Io2a1_4x;1{lay}|o2a1_4x@0||20|1|||D5G4;
+NMetal-1-Pin|pin@0||24|1||||
+NMetal-1-Pin|pin@1||24|91||||
+NMetal-2-Pin|pin@2||40|37.5||||
+NMetal-2-Pin|pin@3||24|43||||
+NMetal-2-Pin|pin@4||32|61||||
+AMetal-2|net@4||1|S2700|contact@0||8|30|nand2_1x@0|y|8|46
+AMetal-2|net@6||1|S2700|contact@1||72|30|inv_1x@0|a|72|41
+AMetal-3|net@8||1|S1800|contact@0||8|30|contact@2||40|30
+AMetal-3|net@9||1|S1800|contact@2||40|30|contact@1||72|30
+AMetal-2|net@10||1|S900|contact@3||0|50|nand2_1x@0|a|0|38
+AMetal-3|net@11||1|S1800|contact@3||0|50|contact@4||24|50
+AMetal-2|net@13||1|S900|contact@5||16|70|nand2_1x@0|b|16|54
+AMetal-3|net@15||1|S0|contact@6||32|70|contact@5||16|70
+AMetal-1|net@16||5|S1800|nand2_1x@0|gnd|0|1|pin@0||24|1
+AMetal-1|net@17||5|S0|inv_1x@0|gnd|72|1|pin@0||24|1
+AMetal-1|net@18||5|S0|inv_1x@0|vdd|72|91|pin@1||24|91
+AMetal-1|net@19||5|S1800|nand2_1x@0|vdd|0|91|pin@1||24|91
+AMetal-2|net@20||1|S2700|contact@2||40|30|pin@2||40|37.5
+AMetal-2|net@21||1|S900|contact@4||24|50|pin@3||24|43
+AMetal-2|net@22||1|S900|contact@6||32|70|pin@4||32|61
+AMetal-1|net@23||5|S1800|nand2_1x@0|gnd|0|1|inv_1x@0|gnd|72|1
+AMetal-1|net@24||5|S0|inv_1x@0|vdd|72|91|nand2_1x@0|vdd|0|91
+AMetal-1|net@25||5|S0|o2a1_4x@0|gnd|24|1|nand2_1x@0|gnd|0|1
+AMetal-1|net@26||5|S0|o2a1_4x@0|vdd|24|91|nand2_1x@0|vdd|0|91
+AMetal-2|net@27||1|S0|o2a1_4x@0|a|24|43|pin@3||24|43
+AMetal-2|net@28||1|S900|pin@4||32|61|o2a1_4x@0|b|32|43
+AMetal-2|net@29||1|S2700|pin@2||40|37.5|o2a1_4x@0|c|40|43
+EA||D5G2;|nand2_1x@0|a|I
+EB||D5G2;|nand2_1x@0|b|I
+EG||D5G2;|inv_1x@0|y|O
+EP||D5G2;|o2a1_4x@0|y|O
+Egnd||D5G2;|nand2_1x@0|gnd|G
+Evdd||D5G2;|nand2_1x@0|vdd|P
+X
+
+# Cell bitwisePG_OPTIMIZED;1{sch}
+CbitwisePG_OPTIMIZED;1{sch}||schematic|1353428012828|1353593556036|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+IbitwisePG_OPTIMIZED;1{ic}|bitwiseP@0||32.5|36|||D5G4;
+Iinv_1x;1{ic}|inv_1x@0||3|12|||D5G4;
+Inand2_1x;1{ic}|nand2_1x@0||-17|12|||D5G4;
+Io2a1_4x;1{ic}|o2a1_4x@0||-2|15|||D5G4;
+NWire_Pin|pin@0||-7.5|19||||
+NWire_Pin|pin@1||-7.5|12||||
+NWire_Pin|pin@2||-33.5|25||||
+NWire_Pin|pin@3||-25|14||||
+NWire_Pin|pin@4||-25|25||||
+NWire_Pin|pin@5||-13|23||||
+NWire_Pin|pin@6||-13|20.5||||
+NWire_Pin|pin@7||-33|20.5||||
+NWire_Pin|pin@8||-28|10||||
+NWire_Pin|pin@9||-28|20.5||||
+NWire_Pin|pin@10||20|21||||
+NWire_Pin|pin@11||20|12||||
+NWire_Pin|pin@12||-2|19||||
+NWire_Pin|pin@13||-2|25||||
+NWire_Pin|pin@14||-2|23||||
+Awire|net@2|||0|inv_1x@0|a|-2|12|pin@1||-7.5|12
+Awire|net@3|||0|pin@1||-7.5|12|nand2_1x@0|y|-11|12
+Awire|net@4|||900|pin@0||-7.5|19|pin@1||-7.5|12
+Awire|net@6|||0|nand2_1x@0|a|-22|14|pin@3||-25|14
+Awire|net@8|||0|pin@4||-25|25|pin@2||-33.5|25
+Awire|net@9|||2700|pin@3||-25|14|pin@4||-25|25
+Awire|net@11|||900|pin@5||-13|23|pin@6||-13|20.5
+Awire|net@13|||0|nand2_1x@0|b|-22|10|pin@8||-28|10
+Awire|net@14|||0|pin@6||-13|20.5|pin@9||-28|20.5
+Awire|net@15|||0|pin@9||-28|20.5|pin@7||-33|20.5
+Awire|net@16|||2700|pin@8||-28|10|pin@9||-28|20.5
+Awire|net@18|||1800|inv_1x@0|y|9|12|pin@11||20|12
+Awire|net@19|||1800|pin@0||-7.5|19|pin@12||-2|19
+Awire|net@20|||1800|pin@4||-25|25|pin@13||-2|25
+Awire|net@21|||1800|pin@5||-13|23|pin@14||-2|23
+Awire|net@23|||0|pin@13||-2|25|o2a1_4x@0|a|-3|25
+Awire|net@24|||0|pin@14||-2|23|o2a1_4x@0|b|-3|23
+Awire|net@25|||0|pin@12||-2|19|o2a1_4x@0|c|-3|19
+Awire|net@27|||0|pin@10||20|21|o2a1_4x@0|y|14|21
+EA_i|A|D5G2;|pin@2||I
+EB_i|B|D5G2;|pin@7||I
+EG_i|G|D5G2;|pin@11||O
+EP_i|P|D5G2;|pin@10||O
+X
+
 # Cell bitwisePG_block;1{lay}
 CbitwisePG_block;1{lay}||mocmos|1353598107320|1353599164180||DRC_last_good_drc_area_date()G1353599196978|DRC_last_good_drc_bit()I18|DRC_last_good_drc_date()G1353599196978
 Ngeneric:Facet-Center|art@0||0|0||||AV
-IbitwisePG;1{lay}|bitwiseP@0||0|-1|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@0||0|-1|||D5G4;
 IbitwisePG_2x;1{lay}|bitwiseP@1||0|109|||D5G4;
-IbitwisePG;1{lay}|bitwiseP@2||0|219|||D5G4;
-IbitwisePG;1{lay}|bitwiseP@3||0|329|||D5G4;
-IbitwisePG;1{lay}|bitwiseP@4||0|439|||D5G4;
-IbitwisePG;1{lay}|bitwiseP@5||0|549|||D5G4;
-IbitwisePG;1{lay}|bitwiseP@6||0|659|||D5G4;
-IbitwisePG;1{lay}|bitwiseP@7||0|769|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@2||0|219|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@3||0|329|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@4||0|439|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@5||0|549|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@6||0|659|||D5G4;
+IbitwisePG_OPTIMIZED;1{lay}|bitwiseP@7||0|769|||D5G4;
 EA1||D5G2;|bitwiseP@0|A|I
 EA2||D5G2;|bitwiseP@1|A|I
 EA3||D5G2;|bitwiseP@2|A|I
@@ -5549,7 +5549,7 @@ X
 
 # Cell topLevel;1{lay}
 CtopLevel;1{lay}||mocmos|1353613492842|1353613704441|
-I8bit_LF;1{lay}|8bit_LF@0||2|116|||D5G4;
+I8bit_LF_OPTIMIZED;1{lay}|8bit_LF@0||2|116|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NMetal-1-Pin|pin@0||-28|6||||
 NMetal-1-Pin|pin@1||-28|885||||
